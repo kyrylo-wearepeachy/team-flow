@@ -4,6 +4,18 @@ Instructions for AI agents that pass work through a team: **PM → Dev → QA �
 
 Every person works with their own agent, in their own project folder, on their own computer. Each task moves as one file per role, all starting with the same header, so every role sees the full picture: what the client asked, what changed in the code, and what was checked.
 
+## In one minute
+
+team-flow is a set of instructions for an AI agent, so that the PM, the developer and the QA pass tasks in one format.
+
+1. **The PM** gets a request from the client. The agent turns it into a task file: what to do, and how to check it is done.
+2. **The developer** gets that file. The agent helps make the changes and writes down what changed and where in the code.
+3. **The QA** gets both files. The agent checks the result and writes down what works and what does not.
+
+**Why:** the whole history of a task is in one place. No searching through chats, no asking again.
+
+Give your agent the link to this repository and ask "what is this?" — it explains the same in your language, and sets nothing up until you tell it your role.
+
 ## Start
 
 1. Open an empty project folder in your agent (a desktop app, a CLI — any agent that reads files).

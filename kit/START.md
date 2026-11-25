@@ -8,6 +8,23 @@ The user gave you this kit, or a link to it, to set up their project folder, or 
 - **Go-ahead.** Wherever these rules say "go-ahead", it means the user's explicit yes to that step, in any language ("yes", "go", "ok", …). Without it, write nothing.
 - **Read-only by default.** Setting up and working, you read. You write only the local files these rules name. You never act outside this folder on your own (see "Local and external" in RULES.md).
 
+## If the user only asks what this is
+
+Set up nothing. Answer in the user's language, in this shape, and keep it to one screen:
+
+> **team-flow is a set of instructions for an AI agent, so that the PM, the developer and the QA pass tasks in one format.**
+>
+> **How it works:**
+> 1. **The PM** gets a request from the client. The agent turns it into a task file: what to do, and how to check it is done.
+> 2. **The developer** gets that file. The agent helps make the changes and writes down what changed and where in the code.
+> 3. **The QA** gets both files. The agent checks the result and writes down what works and what does not.
+>
+> **Why:** the whole history of a task is in one place. No searching through chats, no asking again.
+
+Then one line: "Want to set it up? Tell me your role: PM, Dev or QA."
+
+If the user named their role, add one short paragraph: what they will do, and from whom they get files. Show the file map (step 7) and what you never do on your own only if the user asks.
+
 ## Already set up?
 
 If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set up: take the paths from its "Paths", read `RULES.md` and your role file from the kit path, then the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
