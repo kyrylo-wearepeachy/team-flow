@@ -1,12 +1,12 @@
-<shared header: [header.md](header.md) — YAML block, title line, description. Copied from the PM file you read; only the title line names your role>
+<shared header: [header.md](header.md) — YAML block, title line, description. Copied from the PM file you read; the title line names your role and nick>
 
-## Dev
+## <Dev | other role> · round <N>
 
-Date: <YYYY-MM-DD HH:MM> · Status: <ready_for_qa | blocked>
+Date: <YYYY-MM-DD HH:MM> · By: <nick> · Scope: <all | D1, D2> · Status: <ready_for_qa | blocked>
 
 ## Read
 
-<files and versions read, e.g. CU-001-pm.md v3, CU-001-qa.md>
+<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev-anna.md, CU-001-qa-olga.md (bugs 1, 2)>
 
 ## Done
 

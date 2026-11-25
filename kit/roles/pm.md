@@ -10,7 +10,7 @@ The user drops everything they have: chat messages, screenshots, files, links. I
 2. Split it into separate problems. One problem = one task. A wish that is not a problem is still a task if the client asks for it.
 3. For each problem, open the sources in `project.md` read-only: find in the site code where the problem is and, if you can, why; open the page. For every page in the task, also check where the links to it lead and that the page exists (e.g. two products may share one page). Fill "Agent reading" — one row per "Done when" item (see RULES.md). Do not fix anything.
 4. Take the next free task ID: look in `tasks/` and, if connected, in the task storage (CU-001, CU-002, …). If the task storage gives IDs, use them.
-5. Fill [../templates/pm.md](../templates/pm.md) per task. Copy the screenshots that belong to it into the task's `media/`.
+5. Fill [../templates/pm.md](../templates/pm.md) per task, as `tasks/<ID>/<ID>-pm.md`. Put the screenshots that belong to it into the task's `media/` with clear names that start with the task ID, each described in Materials (see "Media" in RULES.md).
 6. Show the files, then write them after the go-ahead. Report it (RULES.md).
 
 ## Update

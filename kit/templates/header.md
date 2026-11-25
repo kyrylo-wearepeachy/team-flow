@@ -16,6 +16,6 @@ url: <page URL>
 title: "[<Page>] <What to do — imperative, up to 8 words>"
 ---
 
-# <TASK-ID> · <PM | Dev | QA round N>
+# <TASK-ID> · <PM | Dev | QA | other role> · <nick>[ · round N]
 
 <1–3 sentences: the result the client wants, as of this PM version. No history, no quotes.>

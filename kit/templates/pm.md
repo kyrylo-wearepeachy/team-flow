@@ -2,7 +2,7 @@
 
 ## PM
 
-Updated: <YYYY-MM-DD HH:MM> · Status: <ready_for_dev | needs_client_answer | cancelled>
+Updated: <YYYY-MM-DD HH:MM> · By: <nick> · Status: <ready_for_dev | needs_client_answer | cancelled>
 
 ## Done when
 
@@ -18,7 +18,7 @@ Updated: <YYYY-MM-DD HH:MM> · Status: <ready_for_dev | needs_client_answer | ca
 
 ## Materials
 
-- `media/<file>` — <what it shows; say if cropped or unclear>
+- `<file name>` — <one line: what it shows and why it matters; say if cropped or unclear>
 
 ## Questions
 

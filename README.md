@@ -25,8 +25,10 @@ Nothing is cloned, connected or sent.
 | Role | You say | The agent writes |
 | --- | --- | --- |
 | PM | "here is what the client sent" (texts, screenshots) | `tasks/CU-001/CU-001-pm.md`: what to do, numbered "Done when" items, where it is in the code |
-| Dev | "take CU-001" | `CU-001-dev.md`: what changed, where in the code, against every item |
-| QA | "check CU-001" | `CU-001-qa.md`: what was seen on the site and in the code, ✅ / ❌ per item |
+| Dev | "take CU-001" | `CU-001-dev-<nick>.md`: what changed, where in the code, against every item |
+| QA | "check CU-001" | `CU-001-qa-<nick>.md`: what was seen on the site and in the code, ✅ / ❌ per item |
+
+Every person writes only their own file, so two developers or two QAs on one task simply means two files, each with its own scope. Other specialists (design, content, …) add their own file the same way.
 
 You pass the files to the next role yourself, or tell your agent to attach them in a connected task tracker.
 

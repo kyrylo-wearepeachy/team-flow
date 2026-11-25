@@ -1,12 +1,12 @@
-<shared header: [header.md](header.md) — YAML block, title line, description. Copied from the PM file you read; only the title line names your role>
+<shared header: [header.md](header.md) — YAML block, title line, description. Copied from the PM file you read; the title line names your role and nick>
 
 ## QA · round <N>
 
-Date: <YYYY-MM-DD HH:MM> · Result: <✅ passed | ❌ failed>
+Date: <YYYY-MM-DD HH:MM> · By: <nick> · Scope: <all | D1, D2> · Result: <✅ passed | ❌ failed>
 
 ## Read
 
-<files and versions read, e.g. CU-001-pm.md v3, CU-001-dev.md>
+<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev-anna.md>
 
 ## Agent reading
 
@@ -16,7 +16,7 @@ Date: <YYYY-MM-DD HH:MM> · Result: <✅ passed | ❌ failed>
 
 ## Bugs
 
-- [ ] 1. D2 · <Device>: <what is wrong — one line> — <page> — `media/<screenshot>`
+- [ ] 1. D2 · <Device>: <what is wrong — one line> — <page> — `<screenshot file>`: <one line, what it shows>
 
 ## Out of scope
 
