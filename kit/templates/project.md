@@ -51,4 +51,4 @@ The project's mini report: one row per task, the current state of every role. Up
 Every task you worked on, newest last. One row per file you wrote.
 
 | Date | Task | Role | PM version | Link | What happened |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |

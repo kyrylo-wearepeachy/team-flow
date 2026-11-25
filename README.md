@@ -16,7 +16,7 @@ The agent reads [kit/START.md](kit/START.md) and:
 - looks around the folder by itself (site code, existing tasks);
 - asks once for missing links, and once which connectors (task tracker, code host, chat) you have — read access only;
 - shows what it will create and waits for your yes;
-- creates locally only `project.md`, a copy of the kit in `.team-flow/`, and one instructions file for your agent (`CLAUDE.md`, `AGENTS.md` or `GEMINI.md`), so every new session picks it up. `tasks/` appears with the first task.
+- creates locally only `project.md`, a copy of the kit in `.team-flow/`, and `AGENTS.md` (role, nick, where the kit is) with one-line `CLAUDE.md` and `GEMINI.md` that import it, so every new session of any agent picks it up. `tasks/` appears with the first task.
 
 Nothing is cloned, connected or sent.
 
@@ -27,13 +27,17 @@ One project, one folder. You open every session for that project in its folder.
 ```text
 work/                      your general work folder
 ├── project-a/             open the agent here
-│   ├── CLAUDE.md          (or AGENTS.md / GEMINI.md): role, nick, where the kit is
+│   ├── AGENTS.md          role, nick, where the kit is
+│   ├── CLAUDE.md          @AGENTS.md (one import line)
+│   ├── GEMINI.md          @AGENTS.md (one import line)
 │   ├── project.md         your mini report of the project
 │   ├── .team-flow/        local copy of the kit
 │   ├── tasks/CU-001/      the task's files: yours and the ones other roles pass you
 │   └── site/              developers only: the site code, its own git
 └── project-b/
 ```
+
+These are defaults. If your project already has its own structure (a tasks folder, notes, code in `src/`), the agent maps it in "Paths" in `AGENTS.md` instead of creating duplicates, and every rule follows that map.
 
 The agent decides where to set up by itself: in the folder you opened, if it is a project folder; in a new `./<project>/` subfolder, if you opened a general work folder; and if you opened the site's code repository, it asks once whether to use the parent folder, so team-flow files stay out of the site's git.
 

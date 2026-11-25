@@ -10,7 +10,7 @@ The user gave you this kit, or a link to it, to set up their project folder, or 
 
 ## Already set up?
 
-If the current folder has `project.md` and an agent instructions file (`CLAUDE.md`, `AGENTS.md` or `GEMINI.md`) with a `team-flow role:` line, it is set up: read `RULES.md` and your role file from the local kit copy named there, then `project.md`. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
+If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set up: take the paths from its "Paths", read `RULES.md` and your role file from the kit path, then the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
 
 ## Set up (once per project folder)
 
@@ -21,7 +21,8 @@ If the current folder has `project.md` and an agent instructions file (`CLAUDE.m
    - **A project folder** (empty, or the project's files, but not itself a code repository) → set up right here, at the top level. Site code may sit in a subfolder.
    - **A general work folder** (it holds several unrelated project folders) → propose a new subfolder named after the project, e.g. `./<project>/`, as part of step 7. The user then opens the next sessions in it.
    - **A code repository** (it has `.git` and the site code) → this is the only case you ask, once: set up in the parent folder instead? Say why: here, the team-flow files would show up in the site's git.
-   - Note what you found: where the site code is, an existing `project.md`, `tasks/`, task files.
+   - **Map what already exists.** If the project already has its own structure — a folder of tasks or tickets, the site code in `src/`, `theme/` or elsewhere — point "Paths" at those folders (step 7) instead of creating new ones. Map folders only.
+   - **Never write into the project's existing files.** The report is always a new file of its own: `project.md`, or `team-flow.md` if a `project.md` that is not a team-flow report already exists. Existing notes, readmes and docs stay untouched; you may read them for project facts. The only existing files you may change are `AGENTS.md`, `CLAUDE.md` and `GEMINI.md`, by adding your block at the top.
 5. **Project facts.** If the user gave a task file of this project (any role), take the project keys from the YAML block of its header: that is the team's shared data. For what is still missing, ask once, in one message: project name, site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
 6. **Connectors.** Ask once, in one message, which of these are connected or the user will connect, with one line each on why. Show only the rows for this role:
 
@@ -33,19 +34,27 @@ If the current folder has `project.md` and an agent instructions file (`CLAUDE.m
 
    Say that read access is enough, that you connect nothing yourself (the user does it in their app's settings), and that everything also works without connectors: the user then passes files by hand. Never ask for tokens, passwords, admin access or write access.
 7. **Show** what you will create, with the filled `project.md`, and wait for the go-ahead:
-   - `project.md` — from [templates/project.md](templates/project.md). `checked` = the `checked` of the task file you took the keys from, or now.
+   - The report (`project.md` by default) — from [templates/project.md](templates/project.md). `checked` = the `checked` of the task file you took the keys from, or now.
    - `.team-flow/` — a local copy of this kit's files (`START.md`, `RULES.md`, `roles/`, `templates/`), exactly as read.
-   - **One** agent instructions file, the one your agent reads (`CLAUDE.md` for Claude, `GEMINI.md` for Gemini, `AGENTS.md` for others), with exactly these lines:
-     ```text
-     team-flow role: <pm|dev|qa|other role> · nick: <nick>
-     team-flow kit: .team-flow/ (source: <link or path you read the kit from>)
-     Before any work: read .team-flow/RULES.md and .team-flow/roles/<role>.md, then project.md here.
-     ```
-     If that file exists, add the lines at the top and change nothing else.
+   - Agent instructions, one source for every agent:
+     - `AGENTS.md` — the shared standard most agents read (Codex, Cursor, Copilot and others). It holds this block; the paths are relative to this folder, defaults shown, replaced by what you mapped in step 4:
+       ```text
+       # team-flow
+       Role: <pm|dev|qa|other role> · Nick: <nick>
+       Kit source: <link or path you read the kit from>
+       Paths:
+         kit: .team-flow/
+         report: project.md
+         tasks: tasks/
+         code: <where the site code is, or —>
+       Before any work: read <kit>/RULES.md and <kit>/roles/<role>.md, then <report>.
+       ```
+     - `CLAUDE.md` and `GEMINI.md` — not copies: each holds one import line, `@AGENTS.md`, so Claude and Gemini read the same file and the rules never drift apart.
+     - A file that already exists: add your lines (or the import line) at the top and change nothing else.
 
-   Nothing else: `tasks/` appears with the first task. Leave as few traces as possible.
+   Nothing else: the tasks folder appears with the first task. Leave as few traces as possible.
 8. **Create** them after the go-ahead. Tell the user in 2–3 lines: where it was set up, role, which connectors are on, what is still `—` in `project.md`. If you set up in another folder, tell the user to open the next sessions there.
 
 ## Kit updates
 
-Only when the user asks: read the kit again from the source in your agent instructions file, show what changed, and replace `.team-flow/` after the go-ahead.
+Only when the user asks: read the kit again from "Kit source" in `AGENTS.md`, show what changed, and replace `.team-flow/` after the go-ahead.
