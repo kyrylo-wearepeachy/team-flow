@@ -16,19 +16,36 @@ The agent reads [kit/START.md](kit/START.md) and:
 - looks around the folder by itself (site code, existing tasks);
 - asks once for missing links, and once which connectors (task tracker, code host, chat) you have — read access only;
 - shows what it will create and waits for your yes;
-- creates locally: `project.md`, `tasks/`, `media/`, a copy of the kit in `.team-flow/`, and `AGENTS.md` / `CLAUDE.md` / `GEMINI.md` so every new session picks it up.
+- creates locally only `project.md`, a copy of the kit in `.team-flow/`, and one instructions file for your agent (`CLAUDE.md`, `AGENTS.md` or `GEMINI.md`), so every new session picks it up. `tasks/` appears with the first task.
 
 Nothing is cloned, connected or sent.
+
+## Folder layout
+
+One project, one folder. You open every session for that project in its folder.
+
+```text
+work/                      your general work folder
+├── project-a/             open the agent here
+│   ├── CLAUDE.md          (or AGENTS.md / GEMINI.md): role, nick, where the kit is
+│   ├── project.md         your mini report of the project
+│   ├── .team-flow/        local copy of the kit
+│   ├── tasks/CU-001/      the task's files: yours and the ones other roles pass you
+│   └── site/              developers only: the site code, its own git
+└── project-b/
+```
+
+The agent decides where to set up by itself: in the folder you opened, if it is a project folder; in a new `./<project>/` subfolder, if you opened a general work folder; and if you opened the site's code repository, it asks once whether to use the parent folder, so team-flow files stay out of the site's git.
 
 ## How a task moves
 
 | Role | You say | The agent writes |
 | --- | --- | --- |
 | PM | "here is what the client sent" (texts, screenshots) | `tasks/CU-001/CU-001-pm.md`: what to do, numbered "Done when" items, where it is in the code |
-| Dev | "take CU-001" | `CU-001-dev-<nick>.md`: what changed, where in the code, against every item |
-| QA | "check CU-001" | `CU-001-qa-<nick>.md`: what was seen on the site and in the code, ✅ / ❌ per item |
+| Dev | "take CU-001" | `CU-001-dev.md`: what changed, where in the code, against every item |
+| QA | "check CU-001" | `CU-001-qa.md`: what was seen on the site and in the code, ✅ / ❌ per item |
 
-Every person writes only their own file, so two developers or two QAs on one task simply means two files, each with its own scope. Other specialists (design, content, …) add their own file the same way.
+Every person writes only their own file. The first person on a role is the main one (`CU-001-dev.md`); anyone who joins adds their own file with their nick (`CU-001-dev-max.md`). Each file says who filled it and which items it covers. Other specialists (design, content, …) add their file the same way.
 
 You pass the files to the next role yourself, or tell your agent to attach them in a connected task tracker.
 

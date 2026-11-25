@@ -2,11 +2,11 @@
 
 ## QA · round <N>
 
-Date: <YYYY-MM-DD HH:MM> · By: <nick> · Scope: <all | D1, D2> · Result: <✅ passed | ❌ failed>
+Date: <YYYY-MM-DD HH:MM> · By: <nick> · Main: <yes | no> · Scope: <all | D1, D2> · Result: <✅ passed | ❌ failed>
 
 ## Read
 
-<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev-anna.md>
+<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev.md, CU-001-dev-max.md>
 
 ## Agent reading
 

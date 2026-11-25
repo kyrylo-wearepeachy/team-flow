@@ -7,14 +7,16 @@ Each task is a folder named after the task ID, e.g. `tasks/CU-001/` in your proj
 | File | Written by | From template |
 | --- | --- | --- |
 | `CU-001-pm.md` | whoever creates the task (usually the PM) | [templates/pm.md](templates/pm.md) |
-| `CU-001-dev-<nick>.md` | each developer, one file each | [templates/dev.md](templates/dev.md) |
-| `CU-001-qa-<nick>.md` | each QA, one file each | [templates/qa.md](templates/qa.md) |
-| `CU-001-<role>-<nick>.md` | any other specialist (design, content, …) | [templates/dev.md](templates/dev.md) |
+| `CU-001-dev.md` | the main developer | [templates/dev.md](templates/dev.md) |
+| `CU-001-qa.md` | the main QA | [templates/qa.md](templates/qa.md) |
+| `CU-001-<role>.md` | the main other specialist (design, content, …) | [templates/dev.md](templates/dev.md) |
+| `CU-001-<role>-<nick>.md` | every extra person on a role, e.g. `CU-001-dev-max.md` | the same template as the role |
 | `media/` | anyone | screenshots and files, each with a one-line description where it is referenced |
 
-- `<nick>` is your short name in the team, from `project.md` ("Me").
-- A second round after a failed QA adds a number: `CU-001-dev-anna-2.md`, `CU-001-qa-olga-2.md`.
-- Several people on one role: each writes their own file and names the items they take in "Scope". Taking over from someone: name their file in "Read" and take the items from their "Not done".
+- **Main and extra.** The first person on a role is the main one: their file has no nick, and says `Main: yes`. Anyone who joins the same role later adds their own file with their nick and `Main: no`. `<nick>` is your short name in the team, from `project.md` ("Me").
+- **Who fills what.** Every role file says who filled it: `By: <nick> · Main: <yes | no> · Scope: <items>`. The main person owns the items nobody else took; an extra person names the items they take in "Scope".
+- **Taking over.** Name the earlier file in "Read" and take the items from its "Not done".
+- **Rounds.** A second round after a failed QA adds a number: `CU-001-dev-2.md`, `CU-001-dev-max-2.md`.
 - Never change another person's file.
 
 The team shares task files through the task storage named in `project.md` (`task_storage`, e.g. a ClickUp list). You read it through a connector if one is connected; otherwise the user gives you the files. Putting a file there is an external action (see "Local and external").
@@ -62,7 +64,7 @@ Never change the header or the role part's headings. Custom information goes onl
 
 Check quietly, say nothing if all is fine:
 
-- the folder is set up (`project.md`, `AGENTS.md` with your role) and you know your nick;
+- the folder is set up (`project.md`, an agent instructions file with your role and nick);
 - when you open a task: its files are at `tasks/<ID>/` with the right names, and the task keys in other files match the PM file version they name.
 
 Tell the user only what is wrong, in one or two lines, and what you propose.
@@ -135,6 +137,7 @@ Use only these values where the templates ask for them.
   - PM: `ready_for_dev` · `needs_client_answer` · `cancelled` — the client dropped the whole task.
   - Developer and other specialists: `ready_for_qa` · `blocked`.
   - QA (Result): `✅ passed` · `❌ failed`.
+- **Main:** `yes` for the first person on a role, `no` for everyone who joins later.
 - **Scope:** `all`, or the items you take, e.g. `D1, D3`.
 - **Dates:** always `YYYY-MM-DD HH:MM`, in files and in chat. Dates and times in a task come from the client's messages (when the client said it). `checked`, "Updated", "Date" and the Log use the time you write the file.
 - **Empty:** no value → `—`. Never leave a key, a cell or a section empty, never drop it.

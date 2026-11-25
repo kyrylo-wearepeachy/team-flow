@@ -2,11 +2,11 @@
 
 ## <Dev | other role> · round <N>
 
-Date: <YYYY-MM-DD HH:MM> · By: <nick> · Scope: <all | D1, D2> · Status: <ready_for_qa | blocked>
+Date: <YYYY-MM-DD HH:MM> · By: <nick> · Main: <yes | no> · Scope: <all | D1, D2> · Status: <ready_for_qa | blocked>
 
 ## Read
 
-<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev-anna.md, CU-001-qa-olga.md (bugs 1, 2)>
+<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev.md, CU-001-qa.md (bugs 1, 2)>
 
 ## Done
 
