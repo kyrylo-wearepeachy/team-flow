@@ -1,8 +1,8 @@
 <shared header: [header.md](header.md) — YAML block, title line, description. Copied from the PM file you read; the title line names your role and nick>
 
-## <Dev | other role> · round <N>
+## <Dev | other role>
 
-Date: <YYYY-MM-DD HH:MM> · By: <nick> · Main: <yes | no> · Scope: <all | D1, D2> · Status: <ready_for_qa | blocked>
+Updated: <YYYY-MM-DD HH:MM> · Round: <N> · By: <nick> · Main: <yes | no> · Scope: <all | D1, D2> · Status: <ready_for_qa | blocked>
 
 ## Read
 
@@ -10,7 +10,7 @@ Date: <YYYY-MM-DD HH:MM> · By: <nick> · Main: <yes | no> · Scope: <all | D1, 
 
 ## Done
 
-<1–3 lines: what changed, in terms the QA can see.>
+<1–3 lines: what is changed now, over all rounds, in terms the QA can see.>
 
 ## Agent reading
 
@@ -29,6 +29,14 @@ Date: <YYYY-MM-DD HH:MM> · By: <nick> · Main: <yes | no> · Scope: <all | D1, 
 ## Commit
 
 <branch · commit hash or PR URL · commit message, or —>
+
+## Rounds
+
+One row per round, newest last. The sections above always show the current state; this is the history.
+
+| Round | Date | PM v | What changed in this round | Fixed QA bugs |
+| --- | --- | --- | --- | --- |
+| 1 | <YYYY-MM-DD HH:MM> | <v1> | <one line, `file:line`> | <— or bug numbers> |
 
 ## Notes
 

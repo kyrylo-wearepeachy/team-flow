@@ -34,7 +34,7 @@ The project's mini report: one row per task, the current state of every role. Up
 
 | Task | Title | PM v | PM status | Dev | QA | Updated |
 | --- | --- | --- | --- | --- | --- | --- |
-| <CU-001> | <title from the header> | <v1> | <ready_for_dev · needs_client_answer · cancelled> | <per person: nick · status · scope · main change `file:line`, or —> | <per person: nick · ✅/❌ · round N, or —> | <YYYY-MM-DD HH:MM> |
+| <CU-001> | <title from the header> | <v1> | <ready_for_dev · needs_client_answer · cancelled> | <per person: nick · status · scope · main change `file:line`, or —> | <per person: nick · ✅/❌/blocked · round N, or —> | <YYYY-MM-DD HH:MM> |
 
 ## Key pages
 

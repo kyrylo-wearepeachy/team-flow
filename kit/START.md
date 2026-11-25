@@ -10,7 +10,7 @@ The user gave you this kit, or a link to it, to set up their project folder, or 
 
 ## If the user only asks what this is
 
-Set up nothing. Answer in the user's language, in this shape, and keep it to one screen:
+Set up nothing. Answer in the user's language: translate this text closely, keep every block, and add no links, file names or paths. Keep it to one screen:
 
 > **team-flow is a set of instructions for an AI agent, so that the PM, the developer and the QA pass tasks in one format.**
 >
@@ -48,6 +48,8 @@ If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set u
    | Task tracker (e.g. ClickUp) | read tasks and the task files of other roles | read | read | read |
    | Code host (e.g. GitHub) | read the site code when it is not in this folder | read | — (code is local) | read |
    | Chat (e.g. Slack) | read client messages from one channel; pasting them in chat works too | read, optional | — | — |
+
+   If tools are already set up in your environment (a browser, a design tool, helper CLIs, connectors), say in one line which of them you will use for team-flow work and for what (see "Your own setup" in RULES.md).
 
    Say that read access is enough, that you connect nothing yourself (the user does it in their app's settings), and that everything also works without connectors: the user then passes files by hand. Never ask for tokens, passwords, admin access or write access.
 7. **Show** what you will create, with the filled `project.md`, and wait for the go-ahead:
