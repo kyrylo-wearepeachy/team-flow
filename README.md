@@ -4,6 +4,11 @@ Instructions for AI agents that pass work through a team: **PM → Dev → QA �
 
 Every person works with their own agent, in their own project folder, on their own computer. Each task moves as one file per role, all starting with the same header, so every role sees the full picture: what the client asked, what changed in the code, and what was checked.
 
+> **Before you start**
+> - **Early version.** Tested only in a sandbox on a demo site, not on live projects yet. Expect rough edges and tell us what breaks.
+> - **Access to this repository.** If it is private, your agent can read the link only with access to it. Otherwise download the `kit/` folder and give your agent its path.
+> - **No automatic sync.** Task files move between people by hand or through a connected task tracker (e.g. ClickUp). Nothing syncs on its own: pass your file on when you finish.
+
 ## In one minute
 
 team-flow is a set of instructions for an AI agent, so that the PM, the developer and the QA pass tasks in one format.
