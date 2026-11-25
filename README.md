@@ -72,6 +72,19 @@ You pass the files to the next role yourself, or tell your agent to attach them 
 
 `project.md` keeps the project's mini report: one row per task with the current state of every role.
 
+## Optional automation
+
+team-flow works by hand. These make it faster; set up only what you need.
+
+| Option | What it does | Who acts |
+| --- | --- | --- |
+| Connectors in your agent (ClickUp, Slack, GitHub) | The agent reads tasks, channel messages and code. It creates a task, attaches a file or comments only when you tell it to. | the agent, read-only by default |
+| ClickUp integrations | Slack → ClickUp: create a task from a Slack message. GitHub → ClickUp: a task ID in a branch or commit name links the commit or PR to the task. ClickUp Automations: on a status change, assign, move or notify. | ClickUp, set up by you |
+| Scheduled agent | E.g. every morning the agent reads the ClickUp list and a Slack channel (read-only) and updates your `project.md`. | the agent, read-only |
+| Your own flow via API (n8n, Zapier, Make, a script) | E.g. a new ClickUp task creates `tasks/CU-xxx/` with a PM file skeleton. | your flow, set up and maintained by you |
+
+The agent never sets any of these up and never suggests an external action on its own: see [kit/RULES.md](kit/RULES.md), "Local and external".
+
 ## What the agent does and never does
 
 - Reads by default. Writes only local files in the project folder, and only after your yes.
