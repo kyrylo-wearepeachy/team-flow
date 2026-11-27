@@ -27,11 +27,11 @@ If the user named their role, add one short paragraph: what they will do, and fr
 
 ## Already set up?
 
-If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set up: take the paths from its "Paths", read `RULES.md` and your role file from the kit path (if the kit is the team-flow MCP, call its `rules` tool with your role), then the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
+If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set up: take the paths from its "Paths", get the rules from its "Rules" line (the team-flow MCP `rules` tool with your role, or `RULES.md` and your role file read from the link), then read the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
 
 ## Set up (once per project folder)
 
-1. **Read the kit.** Read this whole kit: through the team-flow MCP if it is connected (then follow "MCP mode" from its `setup` tool: no local kit copy), otherwise from the link the user gave or the folder on disk. Do not clone anything.
+1. **Read the kit.** Read this whole kit: through the team-flow MCP if it is connected, otherwise from the link the user gave (or the folder on disk). Do not clone or copy it: every session reads the rules from the same place again, so they are always current.
 2. **Explain** in 2–3 lines what team-flow is and what you are about to do: build a small project structure locally; nothing is cloned, connected or sent.
 3. **Role and nick.** If the user did not give them, ask once, in one line: the role (PM, Dev, QA, or another specialist such as design or content, who works with the Dev template) and a short nick for file names (e.g. `anna`).
 4. **Where to set up.** Read the current folder (only it, and its subfolders) and decide by yourself; do not ask what you can see:
@@ -52,34 +52,31 @@ If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set u
    If tools are already set up in your environment (a browser, a design tool, helper CLIs, connectors), say in one line which of them you will use for team-flow work and for what (see "Your own setup" in RULES.md).
 
    Say that read access is enough, that you connect nothing yourself (the user does it in their app's settings), and that everything also works without connectors: the user then passes files by hand. Never ask for tokens, passwords, admin access or write access.
-   **team-flow MCP.** If it is not connected yet, add one question to the same message: "Connect team-flow directly, so the rules are always current? Say yes and I will do it." Explain in one line that without it the rules are copied into this folder instead. On yes:
+   **team-flow MCP.** If it is not connected yet, add one question to the same message: "Connect team-flow directly, so the rules are always current? Say yes and I will do it." Explain in one line that without it you read the rules from the link each session, which needs web access. On yes:
    - in Claude Code, run `claude mcp add --scope user --transport http team-flow https://team-flow-mcp.kirill-264.workers.dev/mcp`;
    - in Codex, run `codex mcp add team-flow --url https://team-flow-mcp.kirill-264.workers.dev/mcp`;
    - in an app without a command line (a desktop or web app), tell the user the one step: Settings → Connectors → add a custom connector → paste `https://team-flow-mcp.kirill-264.workers.dev/mcp`.
-   It works from the next session. Then set up in "MCP mode": no `.team-flow/` copy, and `AGENTS.md` names the team-flow MCP as the kit. If the command fails or the user says no, go on with the local copy.
+   It works from the next session; `AGENTS.md` then names the team-flow MCP as the place of the rules. If the command fails or the user says no, `AGENTS.md` names the link.
 
 7. **Show** what you will create, with the filled `project.md`, and wait for the go-ahead:
    - The report (`project.md` by default) — from [templates/project.md](templates/project.md). `checked` = the `checked` of the task file you took the keys from, or now.
-   - `.team-flow/` — a local copy of this kit's files (`START.md`, `RULES.md`, `roles/`, `templates/`), exactly as read.
-   - Agent instructions, one source for every agent:
-     - `AGENTS.md` — the shared standard most agents read (Codex, Cursor, Copilot and others). It holds this block; the paths are relative to this folder, defaults shown, replaced by what you mapped in step 4:
-       ```text
-       # team-flow
-       Role: <pm|dev|qa|other role> · Nick: <nick>
-       Kit source: <link or path you read the kit from>
-       Paths:
-         kit: .team-flow/
-         report: project.md
-         tasks: tasks/
-         code: <where the site code is, or —>
-       Before any work: read <kit>/RULES.md and <kit>/roles/<role>.md, then <report>.
-       ```
-     - `CLAUDE.md` and `GEMINI.md` — not copies: each holds one import line, `@AGENTS.md`, so Claude and Gemini read the same file and the rules never drift apart.
-     - A file that already exists: add your lines (or the import line) at the top and change nothing else.
+   - `AGENTS.md` — the shared file most agents read (Codex, Cursor, Copilot and others). It holds this block; paths are relative to this folder, defaults shown, replaced by what you mapped in step 4:
+     ```text
+     # team-flow
+     Role: <pm|dev|qa|other role> · Nick: <nick>
+     Rules: <team-flow MCP | the link you read the kit from>
+     Paths:
+       report: project.md
+       tasks: tasks/
+       code: <where the site code is, or —>
+     Before any work: get the rules for your role from "Rules", then read the report.
+     ```
+   - Only if your own agent does not read `AGENTS.md` by itself: its own file with one import line, `@AGENTS.md` — `CLAUDE.md` for Claude, `GEMINI.md` for Gemini. Not both, not a copy.
+   - A file that already exists: add your block (or the import line) at the top and change nothing else.
 
-   Nothing else: the tasks folder appears with the first task. Leave as few traces as possible.
+   Nothing else: no copy of the kit; the tasks folder appears with the first task. Leave as few traces as possible.
 8. **Create** them after the go-ahead. Tell the user in 2–3 lines: where it was set up, role, which connectors are on, what is still `—` in `project.md`. If you set up in another folder, tell the user to open the next sessions there.
 
 ## Kit updates
 
-Only when the user asks: read the kit again from "Kit source" in `AGENTS.md`, show what changed, and replace `.team-flow/` after the go-ahead.
+Nothing to do: every session reads the rules from the place named in "Rules", so changes reach everyone by themselves. If that place cannot be read (no web access, MCP not connected), tell the user and stop before any task work.
