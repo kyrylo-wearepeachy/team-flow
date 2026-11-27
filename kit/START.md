@@ -52,6 +52,12 @@ If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set u
    If tools are already set up in your environment (a browser, a design tool, helper CLIs, connectors), say in one line which of them you will use for team-flow work and for what (see "Your own setup" in RULES.md).
 
    Say that read access is enough, that you connect nothing yourself (the user does it in their app's settings), and that everything also works without connectors: the user then passes files by hand. Never ask for tokens, passwords, admin access or write access.
+   **team-flow MCP.** If it is not connected yet, add one question to the same message: "Connect team-flow directly, so the rules are always current? Say yes and I will do it." Explain in one line that without it the rules are copied into this folder instead. On yes:
+   - in Claude Code, run `claude mcp add --scope user --transport http team-flow https://team-flow-mcp.kirill-264.workers.dev/mcp`;
+   - in Codex, run `codex mcp add team-flow --url https://team-flow-mcp.kirill-264.workers.dev/mcp`;
+   - in an app without a command line (a desktop or web app), tell the user the one step: Settings → Connectors → add a custom connector → paste `https://team-flow-mcp.kirill-264.workers.dev/mcp`.
+   It works from the next session. Then set up in "MCP mode": no `.team-flow/` copy, and `AGENTS.md` names the team-flow MCP as the kit. If the command fails or the user says no, go on with the local copy.
+
 7. **Show** what you will create, with the filled `project.md`, and wait for the go-ahead:
    - The report (`project.md` by default) — from [templates/project.md](templates/project.md). `checked` = the `checked` of the task file you took the keys from, or now.
    - `.team-flow/` — a local copy of this kit's files (`START.md`, `RULES.md`, `roles/`, `templates/`), exactly as read.

@@ -4,9 +4,19 @@ Instructions for AI agents that pass work through a team: **PM → Dev → QA �
 
 Every person works with their own agent, in their own project folder, on their own computer. Each task moves as one file per role, all starting with the same header, so every role sees the full picture: what the client asked, what changed in the code, and what was checked.
 
+## Get started
+
+1. Open your project folder in your AI agent (Claude, Codex, Cursor, Gemini, …).
+2. Paste this, in any language:
+
+   > https://github.com/kyrylo-wearepeachy/team-flow — set up team-flow, I'm the PM
+
+   (or Dev, or QA).
+
+That's all. The agent explains what it is, asks a few short questions, offers to connect team-flow directly so the rules stay current (just say yes), and sets everything up. Nothing is written without your yes.
+
 > **Before you start**
 > - **Early version.** Tested only in a sandbox on a demo site, not on live projects yet. Expect rough edges and tell us what breaks.
-> - **Access to this repository.** If it is private, your agent can read the link only with access to it. Otherwise download the `kit/` folder and give your agent its path.
 > - **No automatic sync.** Task files move between people by hand or through a connected task tracker (e.g. ClickUp). Nothing syncs on its own: pass your file on when you finish.
 
 ## In one minute
@@ -21,7 +31,7 @@ team-flow is a set of instructions for an AI agent, so that the PM, the develope
 
 Give your agent the link to this repository and ask "what is this?" — it explains the same in your language, and sets nothing up until you tell it your role.
 
-## Start
+## What happens during setup
 
 1. Open an empty project folder in your agent (a desktop app, a CLI — any agent that reads files).
 2. Give it the link to this repository and say, in your own language: *"Set up team-flow, I'm the PM"* (or Dev, QA).
@@ -103,3 +113,16 @@ kit/
 ├── roles/         pm.md, dev.md, qa.md — steps per role
 └── templates/     header.md (shared header), project.md, pm.md, dev.md, qa.md
 ```
+
+## Connect the MCP by hand
+
+Your agent offers to do this for you during setup. To do it yourself: the team-flow MCP server serves the kit straight from this repository, so every session gets the current rules and nothing of the kit is copied to your computer.
+
+URL: `https://team-flow-mcp.kirill-264.workers.dev/mcp`
+
+| Agent | How |
+| --- | --- |
+| Claude Code | `claude mcp add --transport http team-flow https://team-flow-mcp.kirill-264.workers.dev/mcp` |
+| Claude desktop / claude.ai | Settings → Connectors → Add custom connector → paste the URL |
+| Codex | `codex mcp add team-flow --url https://team-flow-mcp.kirill-264.workers.dev/mcp` |
+| Gemini CLI | in `settings.json`: `"mcpServers": { "team-flow": { "httpUrl": "https://team-flow-mcp.kirill-264.workers.dev/mcp" } }` |
