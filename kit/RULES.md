@@ -26,6 +26,7 @@ Each task is a folder, `tasks/<ID>/`. Every person writes only their own file in
 ## The contract
 
 - **Fixed:** the YAML block of your template — every key, values only from the comments next to them. No value → `—`.
+- **Variables:** in the templates, `{name}` is a variable. Replace it with the real value, braces and quotes included; never leave `{…}` in a written file.
 - **Short:** one line per value. A D item: a checkable result in up to 10 words. A ref: `file:line` or a commit hash. Evidence: a screenshot name or a few words of what you saw. Explanations go below the block, never into it.
 - **Free:** everything below it. Write in your own words and style, in English.
 - **Claim vs confirmation:** a developer's `done` is a claim; only a QA `pass` confirms it. Never raise one into the other.
