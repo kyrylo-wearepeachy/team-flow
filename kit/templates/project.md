@@ -26,10 +26,4 @@ Only for this computer: where things are and how your agent reaches them.
 
 ## History
 
-Your own record, one entry per task file you write, newest last. Never edit old entries.
-
-### {now} · {task_id} · {role} · round {round} · PM v{pm_version}
-Task:    {title}
-Done:    what you did, in one or two lines
-Content: what it came from: client message (date, a few words), files, design links
-Links:   commit, tracker task, related tasks ("continues {task_id}")
+Entries in the format of `variables.md` → History entry, newest last.

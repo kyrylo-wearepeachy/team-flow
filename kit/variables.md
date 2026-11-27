@@ -61,6 +61,17 @@ Every other file of the task copies `{task_id}` and `{pm_version}` from the PM f
 | `{qa_result}` | `passed` · `failed` · `blocked` |
 | `{scope}` | `all`, or the D items you take, e.g. `[D1, D3]` |
 | `{now}` | the time you write, `YYYY-MM-DD HH:MM` |
+| `{dev_state}` | a developer's D item: `done` (needs `{ref}`) · `not_done` · `blocked` (both need `{why}`). |
+| `{qa_state}` | a QA D item: `pass` (needs `{where}` and `{evidence}`) · `fail` (needs a bug number) · `no_access` (needs `{why}`) |
+| `{ref}` | `file:line` or a commit hash |
+| `{why}` | what is missing, a few words |
+| `{where}` | page and width or device, e.g. `product · 390` |
+| `{evidence}` | a screenshot file name, or a few words of what you saw |
+| `{commit}` | `branch · hash` once the developer committed, or `—` |
+
+Rules for `{qa_result}`: `passed` only if every item in scope is `pass`; any `fail` → `failed`; any `no_access` → `blocked`.
+
+Values: one line each. A D item is a checkable result in up to 10 words. Explanations go below the YAML block, never into it.
 
 ## Built from variables
 
@@ -71,5 +82,17 @@ Every other file of the task copies `{task_id}` and `{pm_version}` from the PM f
 | your file (main) | `{tasks}/{task_id}/{task_id}-{role}.md` |
 | your file (joined later) | `{tasks}/{task_id}/{task_id}-{role}-{nick}.md` |
 | media | `{tasks}/{task_id}/media/{task_id}-short-name.png` (a file the user adds keeps its name) |
-| commit message (suggested) | `{task_id}: what changed` |
-| History entry heading | `### {now} · {task_id} · {role} · round {round} · PM v{pm_version}` |
+| commit message (suggested) | `{task_id}: what changed` — the developer commits; agents never commit or push |
+| History entry | see below |
+
+### History entry
+
+One per task file you write, at the end of History in `{report}`, never edited later:
+
+```text
+### {now} · {task_id} · {role} · round {round} · PM v{pm_version}
+Task:    {title}
+Done:    what you did, one or two lines (PM: what the client asked · developer: what changed and where · QA: what was checked and the result)
+Content: what it came from: client message (date, a few words), files, design links
+Links:   commit, tracker task, related tasks ("continues {task_id}")
+```

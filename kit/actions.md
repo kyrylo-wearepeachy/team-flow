@@ -39,3 +39,23 @@ One page at several widths side by side, in one browser window, all at the same 
 - **First check what you can open.** Many sites forbid being shown in a frame (an `X-Frame-Options` header, or `frame-ancestors` in `Content-Security-Policy`), and then the frames stay empty. Check the page's headers, or try once.
 - **If frames do not work, choose the way yourself** from what your environment allows, and tell the user in one line what you propose and why. For example: set each width in your browser in turn and show the screenshots side by side; use a tool you already have for this; or something else that fits. Never install anything for it; if the best way needs something new, describe it and let the user decide.
 - Look for: overflow and sideways scroll, wrapped or cut text, overlapping elements, hidden or misplaced buttons, image cropping.
+
+## Task context
+
+Before you work on a task. Read only.
+
+1. **Task files:** every file in `{tasks}/{task_id}/` — the PM passport and every other person's file. Read the YAML first, then the text.
+2. **Task tracker:** if connected, the latest files and comments of the task there. If newer than the local ones, say so.
+3. **Code changes:** commits and pull requests that name `{task_id}`, and what they changed.
+4. **History:** entries for `{task_id}`, or "continues `{task_id}`", in `{report}`.
+
+Then tell the user in 3–5 lines: what the task asks now (`{pm_version}`), who claimed what, what QA confirmed, what is open, what you will do next.
+
+## Project status
+
+What is going on in the project. Read only.
+
+1. For each task folder in `{tasks}` (and the tracker, if connected): read the YAML of every file.
+2. One table: task · title · `{pm_version}` · `{pm_status}` · each developer (nick, `{dev_status}`, `{round}`) · each QA (nick, `{qa_result}`, `{round}`) · what waits for whom.
+3. Flag conflicts: a file made against an old `{pm_version}`, a D item done in one file and missing in another, a pass without evidence.
+4. Add the recent commits and pull requests that name a task ID, one line each.
