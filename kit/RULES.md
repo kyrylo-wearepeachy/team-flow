@@ -4,29 +4,29 @@ Each person works in their own style. Only the hand-off is fixed: the YAML block
 
 ## Paths
 
-`project.md` (the report), `tasks/` and the site code are defaults. "Paths" in `AGENTS.md` says where they are in this project; "Rules" says where you read these rules from. Always use those.
+Everything in this kit is built on the variables in [variables.md](variables.md): each value lives in one place, and every file only uses it. `{report}`, `{tasks}` and `{code}` come from `AGENTS.md`; always use them.
 
 ## Task files
 
-Each task is a folder, `tasks/<ID>/`. Every person writes only their own file in it:
+Each task is a folder, `{tasks}/{task_id}/`. Every person writes only their own file in it:
 
 | File | Who |
 | --- | --- |
-| `<ID>-pm.md` | whoever creates the task (usually the PM). The task's passport. |
-| `<ID>-dev.md` | the first developer on the task (`main: yes`) |
-| `<ID>-qa.md` | the first QA (`main: yes`) |
-| `<ID>-<role>.md` | the first of any other role (design, content, …), with the dev template |
-| `<ID>-<role>-<nick>.md` | anyone who joins a role later (`main: no`); name your items in `scope` |
+| `{task_id}-pm.md` | whoever creates the task (usually the PM). The task's passport. |
+| `{task_id}-dev.md` | the first developer on the task (`main: yes`) |
+| `{task_id}-qa.md` | the first QA (`main: yes`) |
+| `{task_id}-{role}.md` | the first of any other role (design, content, …), with the dev template |
+| `{task_id}-{role}-{nick}.md` | anyone who joins a role later (`main: no`); name your items in `scope` |
 | `media/` | screenshots and files. A file you add gets a name starting with the task ID; a file the user adds keeps its name. |
 
-- Templates: [templates/pm.md](templates/pm.md), [templates/dev.md](templates/dev.md), [templates/qa.md](templates/qa.md). IDs use the project's `task_prefix`.
+- Templates: [templates/pm.md](templates/pm.md), [templates/dev.md](templates/dev.md), [templates/qa.md](templates/qa.md). `{task_id}` is `{task_prefix}` plus the next free number.
 - One file per person for the whole task. A new round updates the same file: raise `round`, keep the YAML true now, add one line about the round in the text.
 - Never change another person's file. Taking over: read their file and take the items from it.
 
 ## The contract
 
 - **Fixed:** the YAML block of your template — every key, values only from the comments next to them. No value → `—`.
-- **Variables:** in the templates, `{name}` is a variable. Replace it with the real value, braces and quotes included; never leave `{…}` in a written file.
+- **Variables:** `{name}` is a variable from [variables.md](variables.md). Fill it from its source, braces included; never type a copied value by hand and never leave `{…}` in a written file.
 - **Short:** one line per value. A D item: a checkable result in up to 10 words. A ref: `file:line` or a commit hash. Evidence: a screenshot name or a few words of what you saw. Explanations go below the block, never into it.
 - **Free:** everything below it. Write in your own words and style, in English.
 - **Claim vs confirmation:** a developer's `done` is a claim; only a QA `pass` confirms it. Never raise one into the other.
@@ -43,24 +43,24 @@ At the start of a session, and before you work on a task, read the recent change
 1. **Default — the task tracker (e.g. ClickUp).** Read task files from the task there. When the user asks in their own words to pass the file on or attach it, check your YAML block, then attach your file to the task. Attaching needs the tracker connected with write access; offer that once at setup.
 2. **Plan B — no tracker connected.** Check your YAML block, then tell the user which file to pass and to whom, and give a ready two-line message to send with it.
 
-Next role: PM file ready → developer. Developer `ready_for_qa` → QA. QA `failed` → developer. QA `passed` → PM. QA `blocked` → the user, with what access is missing.
+Next role: `pm_status: ready_for_dev` → developer. `dev_status: ready_for_qa` → QA. `qa_result: failed` → developer. `qa_result: passed` → PM. `qa_result: blocked` → the user, with what access is missing.
 
 ## Writing
 
-- **Your own team-flow files** — your task file, its `media/`, the History in `project.md`: write them, then show a 3–4 line summary. The user can ask to change anything. Two or more task files at once: one short list.
+- **Your own team-flow files** — your task file, its `media/`, the History in `{report}`: write them, then show a 3–4 line summary. The user can ask to change anything. Two or more task files at once: one short list.
 - **Ask for a yes first:** site code changes and anything outside this computer (attach, comment, status change, post). Do it only when the user tells you to do that exact thing; never on your own, never as a suggestion.
 - Setting up a project folder asks for a yes once (see START.md).
 
 ## History
 
-Everyone keeps a record in `project.md` → History, so that a year later anyone can find what was done, when and from what. After every task file you write, add one entry, newest last, never edit old ones:
+Everyone keeps a record in `{report}` → History, so that a year later anyone can find what was done, when and from what. After every task file you write, add one entry, newest last, never edit old ones:
 
 ```text
 ### 2026-01-31 14:00 · CS-001 · dev · round 1 · PM v1
 Task:    [Product] Make Add to cart red on mobile
 Done:    .btn-primary mobile background removed (css/style.css:103)
-Content: client message 2026-01-30 "button is black on mobile"; IMG_4821.png; Figma: <link>
-Links:   commit a1b2c3d (suggested message: CS-001: …); task <tracker link>; continues —
+Content: client message 2026-01-30 "button is black on mobile"; IMG_4821.png; Figma link
+Links:   commit a1b2c3d (suggested message: CS-001: …); tracker task link; continues —
 ```
 
 What goes in "Done" and "Content" depends on the role: the PM — what the client asked and the materials; a developer — what changed and where; QA — what was checked, the result and the evidence. Short, but enough to find it again. No secrets, no client personal data beyond what the task needs.

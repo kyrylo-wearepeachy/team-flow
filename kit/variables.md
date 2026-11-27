@@ -1,0 +1,75 @@
+# team-flow variables
+
+One system. Every `{name}` in this kit is a variable from this list. Each value lives in **one** place (its source). Everywhere else it is only used: when you write a file, fill each `{name}` from its source — never type a copied value by hand, never leave `{…}` in a written file. If a source changes, the copies follow the next time a file is written.
+
+## Kit
+
+Values are here, nowhere else.
+
+| Variable | Value |
+| --- | --- |
+| `{kit_repo}` | `https://github.com/kyrylo-wearepeachy/team-flow` |
+| `{mcp_url}` | `https://team-flow-mcp.kirill-264.workers.dev/mcp` |
+
+## Person — source: `AGENTS.md` (template [templates/agents.md](templates/agents.md))
+
+| Variable | Meaning |
+| --- | --- |
+| `{role}` | `pm`, `dev`, `qa`, or another role (design, content, …) |
+| `{nick}` | the person's short name for file names |
+| `{rules}` | where the rules are read from: `team-flow MCP` or `{kit_repo}` |
+| `{report}` | path of the project report, default `project.md` |
+| `{tasks}` | path of the tasks folder, default `tasks/` |
+| `{code}` | path of the site code, or `—` |
+
+## Project — source: the YAML block of `{report}` (template [templates/project.md](templates/project.md))
+
+| Variable | Meaning |
+| --- | --- |
+| `{project}` | project name |
+| `{task_prefix}` | letters of task IDs, e.g. `CS` |
+| `{repository}` | code repository URL, or `—` |
+| `{site}` | live site URL, or `—` |
+| `{preview}` | preview URL, or `—` |
+| `{admin}` | admin URL (link only), or `—` |
+| `{task_storage}` | task tracker list URL (e.g. ClickUp), or `—` |
+
+The PM file carries a copy of these under `project:`, filled from `{report}`, so any task file is enough for a new teammate to build their `{report}`.
+
+## Task — source: the YAML block of the PM file (template [templates/pm.md](templates/pm.md))
+
+| Variable | Meaning |
+| --- | --- |
+| `{task_id}` | `{task_prefix}-` + the next free three-digit number (or the tracker's own ID) |
+| `{pm_version}` | 1, +1 on every change |
+| `{pm_status}` | `ready_for_dev` · `needs_client_answer` · `cancelled` |
+| `{type}` | `bug` · `change` · `content` · `new_feature` |
+| `{devices}` | list of `all` · `desktop` · `tablet` · `mobile` |
+| `{title}` | `[Page] what to do`, up to 8 words |
+| `{page}` · `{url}` · `{design}` | page name, page URL, design link (or `—`) |
+| `D1`, `D2`, … | the `done_when` items; numbers never change or get reused |
+
+Every other file of the task copies `{task_id}` and `{pm_version}` from the PM file.
+
+## Person in a task — source: your own task file (templates [dev.md](templates/dev.md), [qa.md](templates/qa.md))
+
+| Variable | Meaning |
+| --- | --- |
+| `{main}` | `yes` for the first person on a role, `no` for anyone who joins later |
+| `{round}` | 1, +1 on every new round, same file |
+| `{dev_status}` | `ready_for_qa` · `blocked` |
+| `{qa_result}` | `passed` · `failed` · `blocked` |
+| `{scope}` | `all`, or the D items you take, e.g. `[D1, D3]` |
+| `{now}` | the time you write, `YYYY-MM-DD HH:MM` |
+
+## Built from variables
+
+| What | Pattern |
+| --- | --- |
+| task folder | `{tasks}/{task_id}/` |
+| PM file | `{tasks}/{task_id}/{task_id}-pm.md` |
+| your file (main) | `{tasks}/{task_id}/{task_id}-{role}.md` |
+| your file (joined later) | `{tasks}/{task_id}/{task_id}-{role}-{nick}.md` |
+| media | `{tasks}/{task_id}/media/{task_id}-short-name.png` (a file the user adds keeps its name) |
+| commit message (suggested) | `{task_id}: what changed` |
+| History entry heading | `### {now} · {task_id} · {role} · round {round} · PM v{pm_version}` |

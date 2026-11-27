@@ -17,7 +17,7 @@ The likely cause of a problem, before anyone fixes it.
 
 1. Look at every source you can reach: the page (in a browser, at the width where it breaks), the design if one is linked, the screenshots, the site code.
 2. Narrow it down: the element, its styles or script, the line that makes it behave so.
-3. Answer in 3-5 lines: "Most likely: <cause>, `file:line`, because <what you saw>." Add what else it could be, and how sure you are.
+3. Answer in 3-5 lines: "Most likely: the cause, `file:line`, because of what you saw." Add what else it could be, and how sure you are.
 4. Read-only. If a task exists, offer to put it into the PM file's "Suggested approach" or into your own file's Notes.
 
 ## Visual check
@@ -34,7 +34,7 @@ Compare the site with the design, for the pages in the task's "Change scope".
 One page at several widths side by side, in one browser window, all at the same height.
 
 - Default widths: 390 · 768 · 1024 · 1440. Wider frames are scaled down so all fit in one window.
-- The ready page is the `responsive` template ([templates/responsive.html](templates/responsive.html)). Open it with the page URL: `responsive.html?url=<page URL>` (optional `&w=390,768,1024,1440`; the frames fill the window height, or set `&h=<px>`).
+- The ready page is the `responsive` template ([templates/responsive.html](templates/responsive.html)). Open it with the page URL: `responsive.html?url=<page URL>` (optional `&w=390,768,1024,1440`; the frames fill the window height, or set `&h=` in pixels).
 - Write the page only to the system temp folder, never into the project; it is the one file you may write outside the project folder.
 - **First check what you can open.** Many sites forbid being shown in a frame (an `X-Frame-Options` header, or `frame-ancestors` in `Content-Security-Policy`), and then the frames stay empty. Check the page's headers, or try once.
 - **If frames do not work, choose the way yourself** from what your environment allows, and tell the user in one line what you propose and why. For example: set each width in your browser in turn and show the screenshots side by side; use a tool you already have for this; or something else that fits. Never install anything for it; if the best way needs something new, describe it and let the user decide.

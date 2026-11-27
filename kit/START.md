@@ -36,7 +36,7 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
 3. **Role and nick.** If the user did not give them, ask once, in one line: the role (PM, Dev, QA, or another specialist such as design or content, who works with the Dev template) and a short nick for file names (e.g. the first letters of their name).
 4. **Where to set up.** Read the current folder (only it, and its subfolders) and decide by yourself; do not ask what you can see:
    - **A project folder** (empty, or the project's files, but not itself a code repository) → set up right here, at the top level. Site code may sit in a subfolder.
-   - **A general work folder** (it holds several unrelated project folders) → propose a new subfolder named after the project, e.g. `./<project>/`, as part of step 7. The user then opens the next sessions in it.
+   - **A general work folder** (it holds several unrelated project folders) → propose a new subfolder named after the project, e.g. `./{project}/`, as part of step 7. The user then opens the next sessions in it.
    - **A code repository** (it has `.git` and the site code) → this is the only case you ask, once: set up in the parent folder instead? Say why: here, the team-flow files would show up in the site's git.
    - **Map what already exists.** If the project already has its own structure — a folder of tasks or tickets, the site code in `src/`, `theme/` or elsewhere — point "Paths" at those folders (step 7) instead of creating new ones. Map folders only.
    - **Never write into the project's existing files.** The report is always a new file of its own: `project.md`, or `team-flow.md` if a `project.md` that is not a team-flow report already exists. Existing notes, readmes and docs stay untouched; you may read them for project facts. The only existing files you may change are `AGENTS.md`, `CLAUDE.md` and `GEMINI.md`, by adding a separate `## team-flow` section at the end.
@@ -53,29 +53,19 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
 
    Say that read access is enough everywhere except the task tracker, where write lets you attach files on their word; that you connect nothing yourself (the user does it in their app's settings); and that everything also works without connectors (plan B: the user passes files by hand). Never ask for tokens, passwords or admin access.
    **team-flow MCP.** If it is not connected yet, add one question to the same message: "Connect team-flow directly, so the rules are always current? Say yes and I will do it." Explain in one line that without it you read the rules from the link each session, which needs web access. On yes:
-   - in Claude Code, run `claude mcp add --scope user --transport http team-flow https://team-flow-mcp.kirill-264.workers.dev/mcp`;
-   - in Codex, run `codex mcp add team-flow --url https://team-flow-mcp.kirill-264.workers.dev/mcp`;
-   - in an app without a command line (a desktop or web app), tell the user the one step: Settings → Connectors → add a custom connector → paste `https://team-flow-mcp.kirill-264.workers.dev/mcp`.
+   - in Claude Code, run `claude mcp add --scope user --transport http team-flow {mcp_url}`;
+   - in Codex, run `codex mcp add team-flow --url {mcp_url}`;
+   - in an app without a command line (a desktop or web app), tell the user the one step: Settings → Connectors → add a custom connector → paste `{mcp_url}`.
    It works from the next session; `AGENTS.md` then names the team-flow MCP as the place of the rules. If the command fails or the user says no, `AGENTS.md` names the link.
 
-7. **Show** what you will create, with the filled `project.md`, and wait for the yes:
-   - The report (`project.md` by default) — from [templates/project.md](templates/project.md). `checked` = the `checked` of the task file you took the keys from, or now.
-   - `AGENTS.md` — the shared file most agents read (Codex, Cursor, Copilot and others). It holds this block; paths are relative to this folder, defaults shown, replaced by what you mapped in step 4:
-     ```text
-     # team-flow
-     Role: <pm|dev|qa|other role> · Nick: <nick>
-     Rules: <team-flow MCP | the link you read the kit from>
-     Paths:
-       report: project.md
-       tasks: tasks/
-       code: <where the site code is, or —>
-     Before any work: get the rules for your role from "Rules", then read the report.
-     ```
+7. **Show** what you will create, with the filled `{report}`, and wait for the yes:
+   - `{report}` — from [templates/project.md](templates/project.md): the source of the project variables.
+   - `AGENTS.md` — the shared file most agents read (Codex, Cursor, Copilot and others), from [templates/agents.md](templates/agents.md): the source of `{role}`, `{nick}`, `{rules}` and the paths (`{report}`, `{tasks}`, `{code}`; defaults `project.md`, `tasks/`, or what you mapped in step 4).
    - Only if your own agent does not read `AGENTS.md` by itself: its own file with one import line, `@AGENTS.md` — `CLAUDE.md` for Claude, `GEMINI.md` for Gemini. Not both, not a copy.
    - A file that already exists: add your block as a separate section at the end, headed `## team-flow` (for an import file, the import line at the end), and change nothing else in it.
 
    Nothing else: no copy of the kit; the tasks folder appears with the first task. Leave as few traces as possible.
-8. **Create** them after the yes. Tell the user in 2–3 lines: where it was set up, role, which connectors are on, what is still `—` in `project.md`. If you set up in another folder, tell the user to open the next sessions there.
+8. **Create** them after the yes, every `{name}` filled from its source (see [variables.md](variables.md)). Tell the user in 2–3 lines: where it was set up, role, which connectors are on, what is still `—` in `{report}`. If you set up in another folder, tell the user to open the next sessions there.
 
 ## Kit updates
 
