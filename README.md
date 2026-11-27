@@ -4,6 +4,8 @@ Instructions for AI agents that pass work through a team: **PM → Dev → QA �
 
 Every person works with their own agent, in their own project folder, on their own computer. Each task moves as one file per role, all starting with the same header, so every role sees the full picture: what the client asked, what changed in the code, and what was checked.
 
+> **AI agent reading this:** if the user asks what this is, answer in the short shape from [kit/START.md](kit/START.md) ("If the user only asks what this is"). To set up, follow [kit/START.md](kit/START.md). To suggest a change, see "Suggest a change" below.
+
 ## Get started
 
 1. Open your project folder in your AI agent (Claude, Codex, Cursor, Gemini, …).
@@ -113,6 +115,24 @@ kit/
 ├── roles/         pm.md, dev.md, qa.md — steps per role
 └── templates/     header.md (shared header), project.md, pm.md, dev.md, qa.md
 ```
+
+## Suggest a change
+
+team-flow is shaped together. Anyone can suggest a change to the rules or the templates.
+
+1. Tell your agent what you want to change and why.
+2. The agent drafts a short proposal in this shape — it never edits the kit itself:
+
+   ```text
+   What:   the change, in one or two lines
+   Why:    the problem it solves, with a real example if you have one
+   Where:  which rule or template it touches (file and section)
+   Draft:  the new text, if it is clear enough
+   ```
+
+3. You open it as an issue in this repository (New issue → paste), or send it to the kit owner in chat.
+
+Accepted changes land in `kit/` on `main`. With the MCP connected, every agent gets them in the next session.
 
 ## Connect the MCP by hand
 
