@@ -56,3 +56,14 @@ What is going on in the project. Read only.
 2. One table: task · title · `{pm_version}` · `{pm_status}` · each developer (nick, `{dev_status}`, `{round}`) · each QA (nick, `{qa_result}`, `{round}`) · `{depends_on}` · what waits for whom.
 3. Flag conflicts: a file made against an old `{pm_version}`, an acceptance criterion done in one file and missing in another, a pass without evidence.
 4. Add the recent commits and pull requests that name a task ID, one line each.
+
+## Share content
+
+Put a screenshot, a short video, a log or a note behind a link, to use in a task file (materials, `{evidence}`). An external action: say what you will upload and for how long, and act only after the user's yes. Never passwords, keys or private client data.
+
+- **Text** (a log, steps, a note): with the team-flow MCP, call `share_text`; it returns a private link.
+- **A file** (screenshot, PDF, video, up to 10 MB): if you can send an HTTP request, upload it as a private link:
+  `POST {hub_url}/api/files` with the file as the body and headers `x-file-name: {task_id}-short-name.png`, `x-private: 1`, `x-keep: 1 | 7 | 30`. The answer has `link`; the full link is `{hub_url}` + `link`.
+- Otherwise, ask the user to upload it at `{hub_url}` (Files → Private link) and paste the link back.
+- Private links are not listed anywhere and are gone after the chosen days. Put the link and the date it expires in the task file.
+

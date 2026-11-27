@@ -10,6 +10,7 @@ Values are here, nowhere else.
 | --- | --- |
 | `{kit_repo}` | `https://github.com/kyrylo-wearepeachy/team-flow` |
 | `{mcp_url}` | `https://team-flow-mcp.teamflowkit.workers.dev/mcp` |
+| `{hub_url}` | `https://team-flow-hub.teamflowkit.workers.dev` — the team's file space: guide, files, private links, support |
 
 ## Person — source: `AGENTS.md` (template [templates/agents-block.md](templates/agents-block.md))
 
