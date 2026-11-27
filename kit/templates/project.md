@@ -7,6 +7,7 @@ site: "{site}"
 preview: "{preview}"
 admin: "{admin}"
 task_storage: "{task_storage}"
+run: "{run}"
 ---
 
 # Project: {project}

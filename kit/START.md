@@ -25,6 +25,14 @@ Then one line: "Want to set it up? Tell me your role: PM, Dev or QA."
 
 If the user named their role, add one short paragraph: what they will do, and from whom they get files. Show the file map (step 7) and what you never do on your own only if the user asks.
 
+## Joining with only a task file
+
+Someone new comes to fix one thing and has only a task file (or a link to the task). Then:
+
+1. Read the story of the task (the PM file). Under `project:` it has the links, `run` (how to open or run the site) and `kit` (where these rules are).
+2. Read the rules from `kit` (or the team-flow MCP), then set up as below — the project facts come from the story, so ask only for role and nick.
+3. Gather the task context ([actions.md](actions.md) → Task context) and tell the user in a few lines: what to do, where (links), how to start (`run`), and what is open.
+
 ## Already set up?
 
 If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, or a `## team-flow` section), it is set up: take the paths from its "Paths", get the rules from its "Rules" line (the team-flow MCP `rules` tool with your role, or `RULES.md` and your role file read from the link), then read the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
@@ -40,7 +48,7 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
    - **A code repository** (it has `.git` and the site code) → this is the only case you ask, once: set up in the parent folder instead? Say why: here, the team-flow files would show up in the site's git.
    - **Map what already exists.** If the project already has its own structure — a folder of tasks or tickets, the site code in `src/`, `theme/` or elsewhere — point "Paths" at those folders (step 7) instead of creating new ones. Map folders only.
    - **Never write into the project's existing files.** The report is always a new file of its own: `project.md`, or `team-flow.md` if a `project.md` that is not a team-flow report already exists. Existing notes, readmes and docs stay untouched; you may read them for project facts. The only existing files you may change are `AGENTS.md`, `CLAUDE.md` and `GEMINI.md`, by adding a separate `## team-flow` section at the end.
-5. **Project facts.** If the user gave a task file of this project (any role), take the project data from `project:` in its YAML block (a PM file has it): that is the team's shared data. For what is still missing, ask once, in one message: project name, the task prefix (propose one from the project name, e.g. `CS` for coffee-shop, or the prefix the task tracker already uses), site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
+5. **Project facts.** If the user gave a task file of this project, take the project data from `project:` in its story: that is the team's shared data. For what is still missing, ask once, in one message: project name, the task prefix (propose one from the project name, e.g. `CS` for coffee-shop, or the prefix the task tracker already uses), how to open or run the site for work (`run`), site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
 6. **Connectors.** Ask once, in one message, which of these are connected or the user will connect, with one line each on why. Show only the rows for this role:
 
    | Connector | Why | PM | Dev and other specialists | QA |

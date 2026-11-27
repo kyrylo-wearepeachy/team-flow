@@ -33,8 +33,9 @@ Values are here, nowhere else.
 | `{preview}` | preview URL, or `—` |
 | `{admin}` | admin URL (link only), or `—` |
 | `{task_storage}` | task tracker list URL (e.g. ClickUp), or `—` |
+| `{run}` | how to open or run the site for work: a preview URL, a local command, short steps, or `—` (no secrets) |
 
-The PM file carries a copy of these under `project:`, filled from `{report}`, so any task file is enough for a new teammate to build their `{report}`.
+The story carries a copy of these under `project:`, filled from `{report}`, plus `kit: {kit_repo}` — so a newcomer who gets only a task file has the links, how to start, and where the rules are.
 
 ## Task — source: the YAML block of the story (the PM file) (template [templates/pm.md](templates/pm.md))
 
