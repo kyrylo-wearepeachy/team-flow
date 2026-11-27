@@ -7,7 +7,7 @@ pm_version: "2"
 pm_status: "ready_for_dev"
 updated: "2026-01-12 16:05"
 type: "bug"
-devices: "[mobile]"
+devices: [mobile]
 title: "[Product] Make Add to cart red on mobile"
 page: "Product"
 url: "https://demo-shop.example/product"
@@ -16,7 +16,7 @@ acceptance_criteria:
   AC1: "Add to cart is red on mobile"
   AC2: "Add to cart is 56px tall on mobile"
 removed: []
-depends_on: "[]"
+depends_on: []
 project_card: "https://app.clickup.com/t/0000"
 kit: "https://github.com/kyrylo-wearepeachy/team-flow"
 ---

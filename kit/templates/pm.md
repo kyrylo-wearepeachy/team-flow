@@ -7,7 +7,7 @@ pm_version: "{pm_version}"
 pm_status: "{pm_status}"
 updated: "{now}"
 type: "{type}"
-devices: "{devices}"
+devices: ["{devices}"]
 title: "{title}"
 page: "{page}"
 url: "{url}"
@@ -15,7 +15,7 @@ design: "{design}"
 acceptance_criteria:
   AC1: "{one checkable result}"
 removed: []
-depends_on: "{depends_on}"
+depends_on: []
 project_card: "{project_card}"
 kit: "{kit_repo}"
 ---

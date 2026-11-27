@@ -51,6 +51,8 @@ The project card is the one shared place for these. Nothing copies them: the sto
 | `AC1`, `AC2`, … | acceptance criteria: each one checkable result; numbers never change or get reused |
 | `{depends_on}` | task IDs this one waits for, e.g. `[CS-003]`, or `[]` |
 
+Lists (`devices`, `depends_on`, `removed`, `scope` when not `all`) are YAML lists — `[mobile, tablet]` — never quoted strings.
+
 Every other file of the task copies `{task_id}` and `{pm_version}` from the PM file.
 
 ## Person in a task — source: your own task file (templates [dev.md](templates/dev.md), [qa.md](templates/qa.md))
