@@ -80,6 +80,23 @@ You pass the files to the next role yourself, or tell your agent to attach them 
 
 `project.md` keeps the project's mini report: one row per task with the current state of every role.
 
+### With the MCP connected
+
+Every step is also a ready command in your agent (in Claude Code: the `/` menu). Pick it instead of explaining what you want:
+
+| Role | Command | When |
+| --- | --- | --- |
+| PM | `pm_new_request` | the client sent something: make tasks |
+| PM | `pm_update_task` | the client changed or added something to a task |
+| Dev | `dev_take_task` | take a task |
+| Dev | `dev_new_round` | QA returned it, or the PM updated it |
+| QA | `qa_check_task` | check a task, with evidence |
+| Anyone | `project_status` | what is going on in the project |
+| Anyone | `handoff` | you are done: what to pass on, and to whom |
+| Anyone | `suggest_change` | propose a change to team-flow itself |
+
+Each gives your agent only what that step needs: the steps, the template, what to check.
+
 ## Optional automation
 
 team-flow works by hand. These make it faster; set up only what you need.
