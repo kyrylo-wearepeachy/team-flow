@@ -27,11 +27,11 @@ If the user named their role, add one short paragraph: what they will do, and fr
 
 ## Already set up?
 
-If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set up: take the paths from its "Paths", read `RULES.md` and your role file from the kit path, then the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
+If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set up: take the paths from its "Paths", read `RULES.md` and your role file from the kit path (if the kit is the team-flow MCP, call its `rules` tool with your role), then the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
 
 ## Set up (once per project folder)
 
-1. **Read the kit.** Read this whole kit: from the link the user gave, or from the folder on disk. Do not clone anything.
+1. **Read the kit.** Read this whole kit: through the team-flow MCP if it is connected (then follow "MCP mode" from its `setup` tool: no local kit copy), otherwise from the link the user gave or the folder on disk. Do not clone anything.
 2. **Explain** in 2–3 lines what team-flow is and what you are about to do: build a small project structure locally; nothing is cloned, connected or sent.
 3. **Role and nick.** If the user did not give them, ask once, in one line: the role (PM, Dev, QA, or another specialist such as design or content, who works with the Dev template) and a short nick for file names (e.g. `anna`).
 4. **Where to set up.** Read the current folder (only it, and its subfolders) and decide by yourself; do not ask what you can see:
