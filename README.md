@@ -48,6 +48,7 @@ With team-flow connected, each step is a ready command in your agent (in Claude 
 | QA, Dev | `qa_responsive_view` | one page at 390 · 768 · 1024 · 1440 side by side |
 | Anyone | `handoff` | you are done: what to pass on, and to whom |
 | Anyone | `suggest_change` | propose a change to team-flow |
+| Anyone | `send_feedback` | send a comment or request to the kit owner (after you agree to the text) |
 | Anyone | `validate_task_file` | check your file before you pass it on |
 
 ## Good to know
