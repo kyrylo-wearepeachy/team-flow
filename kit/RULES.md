@@ -46,7 +46,9 @@ Everyone keeps a record in `{report}` → History, so that a year later anyone c
 
 ## Sessions
 
-One step, one fresh session: the PM writes the story in one session, the developer works in another, QA checks in another. Everything a step needs is in the task files, so nothing depends on an old chat.
+Each person has one role. It is set once, at setup, in `AGENTS.md` (`{role}`, `{nick}`), and every later session takes it from there — never ask for it again.
+
+A fresh session for each step works best: everything a step needs is in the task files, so nothing depends on an old chat.
 
 ## Start of a session
 

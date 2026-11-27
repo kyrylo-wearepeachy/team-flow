@@ -33,7 +33,7 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
 
 1. **Read the kit.** Read this whole kit: through the team-flow MCP if it is connected, otherwise from the link the user gave (or the folder on disk). Do not clone or copy it: every session reads the rules from the same place again, so they are always current.
 2. **Explain** in 2–3 lines what team-flow is and what you are about to do: build a small project structure locally; nothing is cloned, connected or sent.
-3. **Role and nick.** If the user did not give them, ask once, in one line: the role (PM, Dev, QA, or another specialist such as design or content, who works with the Dev template) and a short nick for file names (e.g. the first letters of their name).
+3. **Role and nick.** Asked only here, once per project folder; later sessions read them from `AGENTS.md`. If the user did not give them, ask once, in one line: the role (PM, Dev, QA, or another specialist such as design or content, who works with the Dev template) and a short nick for file names (e.g. the first letters of their name).
 4. **Where to set up.** Read the current folder (only it, and its subfolders) and decide by yourself; do not ask what you can see:
    - **A project folder** (empty, or the project's files, but not itself a code repository) → set up right here, at the top level. Site code may sit in a subfolder.
    - **A general work folder** (it holds several unrelated project folders) → propose a new subfolder named after the project, e.g. `./{project}/`, as part of step 7. The user then opens the next sessions in it.
