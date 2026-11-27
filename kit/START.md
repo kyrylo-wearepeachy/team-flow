@@ -68,7 +68,7 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
 
 7. **Show** what you will create, with the filled `{report}`, and wait for the yes:
    - `{report}` — from [templates/project.md](templates/project.md): the source of the project variables.
-   - `AGENTS.md` — the shared file most agents read (Codex, Cursor, Copilot and others), from [templates/agents.md](templates/agents.md): the source of `{role}`, `{nick}`, `{rules}` and the paths (`{report}`, `{tasks}`, `{code}`; defaults `project.md`, `tasks/`, or what you mapped in step 4).
+   - `AGENTS.md` — the shared file most agents read (Codex, Cursor, Copilot and others), from [templates/agents-block.md](templates/agents-block.md): the source of `{role}`, `{nick}`, `{rules}` and the paths (`{report}`, `{tasks}`, `{code}`; defaults `project.md`, `tasks/`, or what you mapped in step 4).
    - Only if your own agent does not read `AGENTS.md` by itself: its own file with one import line, `@AGENTS.md` — `CLAUDE.md` for Claude, `GEMINI.md` for Gemini. Not both, not a copy.
    - A file that already exists: add your block as a separate section at the end, headed `## team-flow` (for an import file, the import line at the end), and change nothing else in it.
 

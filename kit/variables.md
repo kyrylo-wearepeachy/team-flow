@@ -11,7 +11,7 @@ Values are here, nowhere else.
 | `{kit_repo}` | `https://github.com/kyrylo-wearepeachy/team-flow` |
 | `{mcp_url}` | `https://team-flow-mcp.kirill-264.workers.dev/mcp` |
 
-## Person — source: `AGENTS.md` (template [templates/agents.md](templates/agents.md))
+## Person — source: `AGENTS.md` (template [templates/agents-block.md](templates/agents-block.md))
 
 | Variable | Meaning |
 | --- | --- |
