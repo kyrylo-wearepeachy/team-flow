@@ -1,12 +1,12 @@
 ---
 # The task's passport. Everyone else works from it. Only its author changes it.
 # Fill it short: one line per value, D items up to 10 words, details go below the block.
-task: <PREFIX-001>
+task: CS-001
 role: pm
-by: <nick>
+by: alex
 pm_version: 1                # +1 on every change
 status: ready_for_dev        # ready_for_dev | needs_client_answer | cancelled
-updated: <YYYY-MM-DD HH:MM>
+updated: "2026-01-31 14:00"
 type: bug                    # bug | change | content | new_feature
 devices: [all]               # all | desktop | tablet | mobile
 title: "[<Page>] <what to do, up to 8 words>"
@@ -27,7 +27,7 @@ project:                     # copied from project.md
   task_storage: <e.g. ClickUp list URL, or —>
 ---
 
-# <PREFIX-001> · PM · <nick>
+# CS-001 · PM · alex
 
 Write the rest in your own words, in English. What usually helps the next roles:
 

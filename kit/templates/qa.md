@@ -1,13 +1,13 @@
 ---
 # Fill it short: one line per value, refs as file:line or a commit, evidence as a screenshot name or a few words. Details go below the block.
-task: <PREFIX-001>
+task: CS-001
 role: qa
-by: <nick>
+by: sam
 main: yes                    # yes = first QA on this task (file <ID>-qa.md); no = joined later (<ID>-qa-<nick>.md)
 round: 1                     # +1 on every new round, same file
 result: passed               # passed | failed | blocked (no access to check)
-updated: <YYYY-MM-DD HH:MM>
-pm_version: <the PM version you checked against: always the latest>
+updated: "2026-01-31 14:00"
+pm_version: 1                # the PM version you checked against (always the latest)
 scope: all                   # all, or [D1, D3]
 change_scope:                # read from the Dev change: check this, not the whole site
   changed: ["<file · section>"]
@@ -20,7 +20,7 @@ bugs:
   - { id: 1, item: D2, what: "<one line>", evidence: "<screenshot>" }
 ---
 
-# <PREFIX-001> · QA · <nick>
+# CS-001 · QA · sam
 
 Write the rest in your own words, in English: how you checked, anything out of scope you noticed (it does not fail the task), and one line per round.
 
