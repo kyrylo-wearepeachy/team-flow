@@ -1,24 +1,17 @@
 # Role: PM
 
-The PM turns what the client sends into clear tasks, and keeps them up to date.
+The PM turns what the client sends into tasks — each with a passport file — and keeps them current.
 
 ## New request
 
-The user drops everything they have: chat messages, screenshots, files, links. It may be messy.
-
-1. Read all of it, including every screenshot. Screenshots may be cropped or blurry: say what you can see and what you cannot.
-2. Split it into separate problems. One problem = one task. A wish that is not a problem is still a task if the client asks for it.
-3. For each problem, open the sources in `project.md` read-only: find in the site code where the problem is and, if you can, why; open the page. For every page in the task, also check where the links to it lead and that the page exists (e.g. two products may share one page). Fill "Agent reading" — one row per "Done when" item (see RULES.md), and "Suggested approach": where the cause likely is and what could change. Do not fix anything.
-4. Take the next free task ID with the project's `task_prefix` (e.g. CS-001, CS-002, …): look in `tasks/` and, if connected, in the task storage. If the task storage gives IDs, use them.
-5. Fill [../templates/pm.md](../templates/pm.md) per task, as `tasks/<ID>/<ID>-pm.md`. Put the screenshots that belong to it into the task's `media/` with clear names that start with the task ID, each described in Materials (see "Media" in RULES.md).
-6. Show the files, then write them after the go-ahead. Report it (RULES.md).
+1. Read everything the user gives: messages, every screenshot (say what you cannot see), files, links, the linked task in the tracker.
+2. Split it: one problem = one task. Two symptoms with one cause in the code = one task; one symptom with different causes on different pages = separate tasks. Not sure → separate, and say why.
+3. For each task, read the code and the page (read-only): where each D item lives now, the likely cause, a suggested approach (a hint, not a rule).
+4. Fill [../templates/pm.md](../templates/pm.md) as `tasks/<ID>/<ID>-pm.md`, with the next ID by `task_prefix` (or the tracker's own ID). Put media in `media/`.
+5. Write, show a short summary, check the YAML block. Hand off when the user says so.
 
 ## Update
 
-The user brings new information about existing tasks.
-
-1. Find which task it belongs to (see "Update or new task" in RULES.md). If the client drops the whole task, set `Status: cancelled`.
-2. Raise the version (v2, v3, …) and the "Updated" time. Change the top sections so they are true now.
-3. "Done when": a new item gets the next number and "(added vN)". A dropped item is struck through with "(removed vN)". A changed item keeps its number, gets new text and "(changed vN)". Numbers are never reused or renumbered.
-4. Add one row to "Change log": version, date, what changed, which items.
-5. Show, then write after the go-ahead. Report it (RULES.md).
+1. Client adds to, changes or drops something a task already asks → update that task; anything else → a new task. Not sure → new task, and say which it may belong to.
+2. Raise `pm_version`. In `done_when`, a new item gets the next number; a dropped one goes to `removed`; numbers are never reused. If the client drops the whole task, `status: cancelled`.
+3. Add one line about the version in the text. Write, check the YAML block, hand off when told.

@@ -1,55 +1,33 @@
 ---
-project: <project name>
-task_prefix: <e.g. CS — task IDs are CS-001, CS-002, …>
-checked: <YYYY-MM-DD HH:MM>
-repository: <GitHub URL | —>
-store: <URL | —>
-preview: <URL | —>
-admin: <URL | —>
-task_storage: <ClickUp list URL | folder path | —>
-other: <"name: URL", or —>
+name: <project>
+task_prefix: <e.g. CS>
+repository: <URL or —>
+site: <URL or —>
+preview: <URL or —>
+admin: <URL or —>
+task_storage: <e.g. ClickUp list URL, or —>
 ---
 
 # Project: <name>
 
 Role here: <pm | dev | qa | other role> · Me: <nick>
 
-The block above is the same as the project keys in [header.md](header.md). Every task file you write copies it from here.
+The block above is the same as `project:` in every PM file. Any PM file is enough to rebuild it.
 
 ## Access
 
-Only for this computer: where things are and how your agent reaches them. Fill from what you found in the folder and the connectors the user named.
+Only for this computer: where things are and how your agent reaches them.
 
 | What | Access |
 | --- | --- |
-| site code | <local path, e.g. ./theme · code host connector · no access> |
-| site | <browser · no access> |
-| preview | <browser · no access> |
-| admin | <no access> |
-| task storage | <connector, read · files from the user> |
-| chat | <connector, read · pasted by the user · —> |
-
-## Tasks
-
-The project's mini report: one row per task, the current state of every role. Update it whenever you read or write a task file.
-
-| Task | Title | PM v | PM status | Dev | QA | Updated |
-| --- | --- | --- | --- | --- | --- | --- |
-| <T-001> | <title from the header> | <v1> | <ready_for_dev · needs_client_answer · cancelled> | <per person: nick · status · scope · main change `file:line`, or —> | <per person: nick · ✅/❌/blocked · round N, or —> | <YYYY-MM-DD HH:MM> |
-
-## Key pages
-
-| Page | URL | Source file |
-| --- | --- | --- |
-| <name> | <URL> | <path in the repository> |
-
-## Notes
-
-- <stable facts about the project: stack, conventions, who the client is>
+| site code | <local path · code host connector · no access> |
+| site / preview | <browser · no access> |
+| design | <connector · screenshots from the user · —> |
+| task storage | <connector read · read and write · files by hand> |
 
 ## Log
 
-Every task you worked on, newest last. One row per file you wrote.
+Your own history: one row per file you wrote. The task overview is built on request (`project_status`), not kept by hand.
 
-| Date | Task | Role | PM version | Link | What happened |
+| Date | Task | Role | Round / PM v | Link | What happened |
 | --- | --- | --- | --- | --- | --- |

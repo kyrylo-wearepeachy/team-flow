@@ -1,39 +1,38 @@
-<shared header: [header.md](header.md) — YAML block, title line, description. "pm_version" is this file's version>
+---
+# The task's passport. Everyone else works from it. Only its author changes it.
+task: <PREFIX-001>
+role: pm
+by: <nick>
+pm_version: 1                # +1 on every change
+status: ready_for_dev        # ready_for_dev | needs_client_answer | cancelled
+updated: <YYYY-MM-DD HH:MM>
+type: bug                    # bug | change | content | new_feature
+devices: [all]               # all | desktop | tablet | mobile
+title: "[<Page>] <what to do, up to 8 words>"
+page: <page name>
+url: <page URL or —>
+design: <design link (e.g. Figma) or —>
+done_when:                   # numbers never change or get reused
+  D1: <one checkable result>
+  D2: <one checkable result>
+removed: []                  # D numbers dropped in later versions, e.g. [D3]
+project:                     # copied from project.md
+  name: <project>
+  task_prefix: <e.g. CS>
+  repository: <URL or —>
+  site: <URL or —>
+  preview: <URL or —>
+  admin: <URL or —>
+  task_storage: <e.g. ClickUp list URL, or —>
+---
 
-## PM
+# <PREFIX-001> · PM · <nick>
 
-Updated: <YYYY-MM-DD HH:MM> · By: <nick> · Status: <ready_for_dev | needs_client_answer | cancelled>
+Write the rest in your own words, in English. What usually helps the next roles:
 
-## Done when
-
-- [ ] D1  <one checkable result>
-- [ ] D2  <added later>  (added v2)
-- [ ] ~~D3  <no longer needed>~~  (removed v3)
-
-## Agent reading
-
-| D | Understood as | Checked in | Code |
-| --- | --- | --- | --- |
-| D1 | <what the client means, in your words> | <sources looked at: `file:line`, page, screenshot> | <found — what is there · not found — what you looked for · — why not checked> |
-
-## Suggested approach (not binding)
-
-<What the agent saw in the code: where the cause likely is and what could change, `file:line`. A hint to save the developer time; the developer decides and may do it differently. — if you could not read the code.>
-
-## Materials
-
-- `<file name>` — <one line: what it shows and why it matters; say if cropped or unclear>
-
-## Questions
-
-- <only what blocks the work and only the client can answer>
-
-## Change log
-
-| v | Date | What changed | Done when |
-| --- | --- | --- | --- |
-| v1 | <YYYY-MM-DD HH:MM> | Created | <D1, D2> |
-
-## Notes
-
-<free space: anything about this task that has no place above, or —>
+- **What the client wants** — 1–3 sentences, as of this version.
+- **What the agent found** — per D item, where it lives in the code now (`file:line`), or "not found", or why not checked.
+- **Suggested approach (not binding)** — the likely cause and what could change. A hint; the developer decides.
+- **Materials** — each file by name, one line on what it shows.
+- **Questions for the client** — only what blocks the work.
+- **Versions** — one line per version: what changed, which D items.

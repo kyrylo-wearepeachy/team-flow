@@ -1,15 +1,15 @@
 # team-flow actions (any role)
 
-Common actions any role can ask for. Each one: work out by yourself which of your tools fit (browser, design access, code access, connectors), say in one line what you will use and what you propose, and act after the go-ahead. If a tool is missing, say what you would need and offer the simplest way around it (e.g. screenshots from the user). Never set up a tool yourself.
+Common actions any role can ask for. Each one: work out by yourself which of your tools fit (browser, design access, code access, connectors), say in one line what you will use and what you propose, and act after the user's yes. If a tool is missing, say what you would need and offer the simplest way around it (e.g. screenshots from the user). Never set up a tool yourself.
 
 ## Task draft
 
 A quick task file from anything: one sentence, a link, a screenshot.
 
 1. Read what the user gave. If it is a link to a task tracker task and the tracker is connected, read the task, its comments and attachments.
-2. Fill the PM template as far as the facts go: header, one or more "Done when" items, Materials with a one-line description each. Unknown → `—`; open points go to Questions.
+2. Fill the PM template as far as the facts go: the YAML block with one or more `done_when` items, and in the text the materials with one line each. Unknown → `—`; open points go to the questions for the client.
 3. Take the next ID with the project's `task_prefix`.
-4. Show, write after the go-ahead, report. The PM file stays the task's passport; a non-PM author is named in "By".
+4. Write, show a short summary, check the YAML block. The PM file is the task's passport; a non-PM author is named in `by`.
 
 ## Find the cause
 
@@ -27,7 +27,7 @@ Compare the site with the design, for the pages in the task's "Change scope".
 1. Find the design: a link in the PM file (e.g. Figma) or design files the user gave. If you can read the design (a connector or design tool you have), take the frames for the same pages and widths. If not, ask the user for screenshots of the frames.
 2. Open each page at the frame's width (see "Responsive view").
 3. Compare what matters for the task: layout, spacing, sizes, colours, texts. Ignore what is out of scope.
-4. Write each difference as one line with the width and a screenshot pair (site · design). In a QA file they go to "Agent reading" as evidence, or to "Bugs".
+4. Write each difference as one line with the width and a screenshot pair (site · design). In a QA file they go to the item's `evidence`, or to `bugs`.
 
 ## Responsive view
 

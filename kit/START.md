@@ -1,11 +1,11 @@
 # team-flow — start here
 
-This is for an AI agent. team-flow is how a team passes work: PM → Dev → QA → PM. Every person works with their own agent in their own project folder, on their own computer. Work moves between people as one file per role per task, all with the same header, so every role sees the full picture: what the client asked, what changed in the code, what was checked.
+This is for an AI agent. team-flow is how a team passes work: PM → Dev → QA → PM. Every person works with their own agent in their own project folder, on their own computer. Work moves between people as one file per person per task — the PM file is the task's passport — each starting with a small YAML block that a check keeps right, so every role sees the full picture: what the client asked, what changed in the code, what was checked.
 
 The user gave you this kit, or a link to it, to set up their project folder, or to work in a folder that is already set up.
 
 - **Language.** These instructions are in English. Talk to the user in the language they write in, short. Files you write are in English, so every teammate reads them the same way.
-- **Go-ahead.** Wherever these rules say "go-ahead", it means the user's explicit yes to that step, in any language ("yes", "go", "ok", …). Without it, write nothing.
+- **Yes.** Setting up, changing site code, and anything outside this computer need the user's explicit yes, in any language ("yes", "go", "ok", …). Your own team-flow files you just write and summarize (RULES.md, "Writing").
 - **Read-only by default.** Setting up and working, you read. You write only the local files these rules name. You never act outside this folder on your own (see "Local and external" in RULES.md).
 
 ## If the user only asks what this is
@@ -40,25 +40,25 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
    - **A code repository** (it has `.git` and the site code) → this is the only case you ask, once: set up in the parent folder instead? Say why: here, the team-flow files would show up in the site's git.
    - **Map what already exists.** If the project already has its own structure — a folder of tasks or tickets, the site code in `src/`, `theme/` or elsewhere — point "Paths" at those folders (step 7) instead of creating new ones. Map folders only.
    - **Never write into the project's existing files.** The report is always a new file of its own: `project.md`, or `team-flow.md` if a `project.md` that is not a team-flow report already exists. Existing notes, readmes and docs stay untouched; you may read them for project facts. The only existing files you may change are `AGENTS.md`, `CLAUDE.md` and `GEMINI.md`, by adding a separate `## team-flow` section at the end.
-5. **Project facts.** If the user gave a task file of this project (any role), take the project keys from the YAML block of its header: that is the team's shared data. For what is still missing, ask once, in one message: project name, the task prefix (propose one from the project name, e.g. `CS` for coffee-shop, or the prefix the task tracker already uses), site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
+5. **Project facts.** If the user gave a task file of this project (any role), take the project data from `project:` in its YAML block (a PM file has it): that is the team's shared data. For what is still missing, ask once, in one message: project name, the task prefix (propose one from the project name, e.g. `CS` for coffee-shop, or the prefix the task tracker already uses), site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
 6. **Connectors.** Ask once, in one message, which of these are connected or the user will connect, with one line each on why. Show only the rows for this role:
 
    | Connector | Why | PM | Dev and other specialists | QA |
    | --- | --- | --- | --- | --- |
-   | Task tracker (e.g. ClickUp) | read tasks and the task files of other roles; for the PM, also create tasks and attach files when told to | read, or write if you want me to create tasks | read | read |
-   | Code host (e.g. GitHub) | read the site code: the PM to suggest a fix, the QA to see what changed | read | — (code is local) | read, needed for "Change scope" |
+   | Task tracker (e.g. ClickUp) | read the task files of other roles; with write access, attach your file when you say "hand off" (the PM can also create tasks) | read + write | read + write | read + write |
+   | Code host (e.g. GitHub) | read the code and its recent changes, to see what is going on | read | read (or local `git log`) | read |
    | Chat (e.g. Slack) | read client messages from one channel; pasting them in chat works too | read, optional | — | — |
 
    If tools are already set up in your environment (a browser, a design tool, helper CLIs, connectors), say in one line which of them you will use for team-flow work and for what (see "Your own setup" in RULES.md).
 
-   Say that read access is enough (the PM's task tracker is the only place where write helps), that you connect nothing yourself (the user does it in their app's settings), and that everything also works without connectors: the user then passes files by hand. Never ask for tokens, passwords, admin access or write access.
+   Say that read access is enough everywhere except the task tracker, where write lets you attach files on their word; that you connect nothing yourself (the user does it in their app's settings); and that everything also works without connectors (plan B: the user passes files by hand). Never ask for tokens, passwords or admin access.
    **team-flow MCP.** If it is not connected yet, add one question to the same message: "Connect team-flow directly, so the rules are always current? Say yes and I will do it." Explain in one line that without it you read the rules from the link each session, which needs web access. On yes:
    - in Claude Code, run `claude mcp add --scope user --transport http team-flow https://team-flow-mcp.kirill-264.workers.dev/mcp`;
    - in Codex, run `codex mcp add team-flow --url https://team-flow-mcp.kirill-264.workers.dev/mcp`;
    - in an app without a command line (a desktop or web app), tell the user the one step: Settings → Connectors → add a custom connector → paste `https://team-flow-mcp.kirill-264.workers.dev/mcp`.
    It works from the next session; `AGENTS.md` then names the team-flow MCP as the place of the rules. If the command fails or the user says no, `AGENTS.md` names the link.
 
-7. **Show** what you will create, with the filled `project.md`, and wait for the go-ahead:
+7. **Show** what you will create, with the filled `project.md`, and wait for the yes:
    - The report (`project.md` by default) — from [templates/project.md](templates/project.md). `checked` = the `checked` of the task file you took the keys from, or now.
    - `AGENTS.md` — the shared file most agents read (Codex, Cursor, Copilot and others). It holds this block; paths are relative to this folder, defaults shown, replaced by what you mapped in step 4:
      ```text
@@ -75,7 +75,7 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
    - A file that already exists: add your block as a separate section at the end, headed `## team-flow` (for an import file, the import line at the end), and change nothing else in it.
 
    Nothing else: no copy of the kit; the tasks folder appears with the first task. Leave as few traces as possible.
-8. **Create** them after the go-ahead. Tell the user in 2–3 lines: where it was set up, role, which connectors are on, what is still `—` in `project.md`. If you set up in another folder, tell the user to open the next sessions there.
+8. **Create** them after the yes. Tell the user in 2–3 lines: where it was set up, role, which connectors are on, what is still `—` in `project.md`. If you set up in another folder, tell the user to open the next sessions there.
 
 ## Kit updates
 
