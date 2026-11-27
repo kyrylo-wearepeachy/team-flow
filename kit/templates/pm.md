@@ -3,7 +3,7 @@
 # Fill it short: one line per value, D items up to 10 words, details go below the block.
 task: CS-001
 role: pm
-by: alex
+by: your-nick
 pm_version: 1                # +1 on every change
 status: ready_for_dev        # ready_for_dev | needs_client_answer | cancelled
 updated: "2026-01-31 14:00"
@@ -27,7 +27,7 @@ project:                     # copied from project.md
   task_storage: <e.g. ClickUp list URL, or —>
 ---
 
-# CS-001 · PM · alex
+# CS-001 · PM · your-nick
 
 Write the rest in your own words, in English. What usually helps the next roles:
 

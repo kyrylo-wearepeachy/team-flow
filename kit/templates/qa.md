@@ -2,7 +2,7 @@
 # Fill it short: one line per value, refs as file:line or a commit, evidence as a screenshot name or a few words. Details go below the block.
 task: CS-001
 role: qa
-by: sam
+by: your-nick
 main: yes                    # yes = first QA on this task (file <ID>-qa.md); no = joined later (<ID>-qa-<nick>.md)
 round: 1                     # +1 on every new round, same file
 result: passed               # passed | failed | blocked (no access to check)
@@ -20,7 +20,7 @@ bugs:
   - { id: 1, item: D2, what: "<one line>", evidence: "<screenshot>" }
 ---
 
-# CS-001 · QA · sam
+# CS-001 · QA · your-nick
 
 Write the rest in your own words, in English: how you checked, anything out of scope you noticed (it does not fail the task), and one line per round.
 
