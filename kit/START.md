@@ -29,7 +29,7 @@ If the user named their role, add one short paragraph: what they will do, and fr
 
 Someone new comes to fix one thing and has only a task file (or a link to the task). Then:
 
-1. Read the story of the task (the PM file). Under `project:` it has every project link and `kit` (where these rules are). That is all a PM or QA needs. A developer also finds how to run the site (`run`) in the task's dev file, or in an earlier dev file of the project; if there is none, ask.
+1. Read the story of the task (the PM file). It links `project_card` (open it for every project link) and `kit` (where these rules are). That is all a PM or QA needs. A developer also finds how to run the site (`run`) in the task's dev file, or in an earlier dev file of the project; if there is none, ask.
 2. Read the rules from `kit` (or the team-flow MCP), then set up as below — the project facts come from the story, so ask only for role and nick.
 3. Gather the task context ([actions.md](actions.md) → Task context) and tell the user in a few lines: what to do, where (links), how to start (for a developer: `run`), and what is open.
 
@@ -48,7 +48,7 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
    - **A code repository** (it has `.git` and the site code) → this is the only case you ask, once: set up in the parent folder instead? Say why: here, the team-flow files would show up in the site's git.
    - **Map what already exists.** If the project already has its own structure — a folder of tasks or tickets, the site code in `src/`, `theme/` or elsewhere — point "Paths" at those folders (step 7) instead of creating new ones. Map folders only.
    - **Never write into the project's existing files.** The report is always a new file of its own: `project.md`, or `team-flow.md` if a `project.md` that is not a team-flow report already exists. Existing notes, readmes and docs stay untouched; you may read them for project facts. The only existing files you may change are `AGENTS.md`, `CLAUDE.md` and `GEMINI.md`, by adding a separate `## team-flow` section at the end.
-5. **Project facts.** If the user gave a task file of this project, take the project data from `project:` in its story: that is the team's shared data. For what is still missing, ask once, in one message: project name, the task prefix (propose one from the project name, e.g. `CS` for coffee-shop, or the prefix the task tracker already uses), site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
+5. **Project facts.** If the user gave a task file of this project, open the `project_card` its story links: that is the team's shared data. For what is still missing, ask once, in one message: project name, the task prefix (propose one from the project name, e.g. `CS` for coffee-shop, or the prefix the task tracker already uses), site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
 6. **Connectors.** Ask once, in one message, which of these are connected or the user will connect, with one line each on why. Show only the rows for this role:
 
    | Connector | Why | PM | Dev and other specialists | QA |
@@ -77,4 +77,6 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
 
 ## Kit updates
 
-Nothing to do: every session reads the rules from the place named in "Rules", so changes reach everyone by themselves. If that place cannot be read (no web access, MCP not connected), tell the user and stop before any task work.
+Nothing to do: every session reads the rules from the place named in "Rules", so changes reach everyone by themselves.
+
+If the rules cannot be read: the team-flow MCP down → read them from `{kit_repo}` instead. Both unreachable → work read-only: read, analyse and answer, but write nothing, and tell the user why.

@@ -16,15 +16,8 @@ acceptance_criteria:
   AC1: "{one checkable result}"
 removed: []
 depends_on: "{depends_on}"
-project:                     # copied from {report}
-  project: "{project}"
-  task_prefix: "{task_prefix}"
-  repository: "{repository}"
-  site: "{site}"
-  preview: "{preview}"
-  admin: "{admin}"
-  task_storage: "{task_storage}"
-  kit: "{kit_repo}"
+project_card: "{project_card}"
+kit: "{kit_repo}"
 ---
 
 # {task_id} · PM · {nick}

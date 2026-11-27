@@ -22,7 +22,7 @@ Values are here, nowhere else.
 | `{tasks}` | path of the tasks folder, default `tasks/` |
 | `{code}` | path of the site code, or `—` |
 
-## Project — source: the YAML block of `{report}` (template [templates/project.md](templates/project.md))
+## Project — source: the project card, i.e. the YAML block of `{report}` (template [templates/project.md](templates/project.md))
 
 | Variable | Meaning |
 | --- | --- |
@@ -33,8 +33,9 @@ Values are here, nowhere else.
 | `{preview}` | preview URL, or `—` |
 | `{admin}` | admin URL (link only), or `—` |
 | `{task_storage}` | task tracker list URL (e.g. ClickUp), or `—` |
+| `{project_card}` | where the team shares the project card once: a link to a pinned tracker task or the list description; or `—` (then the card is passed by hand once) |
 
-The story carries a copy of these under `project:`, filled from `{report}`, plus `kit: {kit_repo}` — so a newcomer who gets only a task file has every project link and knows where the rules are.
+The project card is the one shared place for these. Nothing copies them: the story only links `{project_card}` and `kit: {kit_repo}`, so a newcomer with one task file opens the card and has every current link.
 
 ## Task — source: the YAML block of the story (the PM file) (template [templates/pm.md](templates/pm.md))
 

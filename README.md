@@ -28,6 +28,8 @@ tasks/T-001/  the task's files: yours and the ones others pass you
 
 Claude and Gemini also get a one-line `CLAUDE.md` or `GEMINI.md` that points to `AGENTS.md`. The rules themselves are not copied: they are read fresh every session.
 
+A finished example task is in [examples/](examples/).
+
 ## Commands
 
 With team-flow connected, each step is a ready command in your agent (in Claude Code: the `/` menu). Without it, just say the same in words.
@@ -46,11 +48,13 @@ With team-flow connected, each step is a ready command in your agent (in Claude 
 | QA, Dev | `qa_responsive_view` | one page at 390 · 768 · 1024 · 1440 side by side |
 | Anyone | `handoff` | you are done: what to pass on, and to whom |
 | Anyone | `suggest_change` | propose a change to team-flow |
+| Anyone | `validate_task_file` | check your file before you pass it on |
 
 ## Good to know
 
 - **The PM file is the task's story.** Everyone copies its header and works from it. Its "Suggested approach" is only a hint: the developer decides.
 - **Early version.** Tested only on a demo site so far. Tell us what breaks.
+- **Project links live in one place**, the project card, shared once in the task tracker. Stories link to it instead of copying links.
 - **Files move by hand** or through a connected task tracker (e.g. ClickUp) when you tell your agent to. Nothing syncs on its own.
 - **The agent reads by default** and writes only your own local files, after your yes. It never sends, posts or pushes on its own.
 - **To suggest a change**, ask your agent (`suggest_change`): it drafts a short proposal, and you open it as an issue here or send it to the kit owner.

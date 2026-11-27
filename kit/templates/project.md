@@ -1,5 +1,5 @@
 ---
-# Source of the project variables (variables.md). Fill once; task files copy from here.
+# The project card: the source of the project variables (variables.md). Share this block once with the team ({project_card}).
 project: "{project}"
 task_prefix: "{task_prefix}"
 repository: "{repository}"
@@ -7,6 +7,7 @@ site: "{site}"
 preview: "{preview}"
 admin: "{admin}"
 task_storage: "{task_storage}"
+project_card: "{project_card}"
 ---
 
 # Project: {project}

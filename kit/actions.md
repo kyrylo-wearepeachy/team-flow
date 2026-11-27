@@ -9,7 +9,7 @@ A quick task file from anything: one sentence, a link, a screenshot.
 1. Read what the user gave. If it is a link to a task tracker task and the tracker is connected, read the task, its comments and attachments.
 2. Fill the PM template as far as the facts go: the YAML block with one or more `acceptance_criteria` items, and in the text the materials with one line each. Unknown → `—`; open points go to the questions for the client.
 3. Take the next ID with the project's `task_prefix`.
-4. Write, show a short summary, check the YAML block. The PM file is the task's story; a non-PM author is named in `by`.
+4. Write, show a short summary, validate the file. The PM file is the task's story; a non-PM author is named in `by`.
 
 ## Find the cause
 
@@ -31,13 +31,10 @@ Compare the site with the design, for the pages in the task's "Change scope".
 
 ## Responsive view
 
-One page at several widths side by side, in one browser window, all at the same height.
+One page at several widths side by side, all at the same height: 390 · 768 · 1024 · 1440 by default.
 
-- Default widths: 390 · 768 · 1024 · 1440. Wider frames are scaled down so all fit in one window.
-- The ready page is the `responsive` template ([templates/responsive.html](templates/responsive.html)). Open it with the page URL: `responsive.html?url=<page URL>` (optional `&w=390,768,1024,1440`; the frames fill the window height, or set `&h=` in pixels).
-- Write the page only to the system temp folder, never into the project; it is the one file you may write outside the project folder.
-- **First check what you can open.** Many sites forbid being shown in a frame (an `X-Frame-Options` header, or `frame-ancestors` in `Content-Security-Policy`), and then the frames stay empty. Check the page's headers, or try once.
-- **If frames do not work, choose the way yourself** from what your environment allows, and tell the user in one line what you propose and why. For example: set each width in your browser in turn and show the screenshots side by side; use a tool you already have for this; or something else that fits. Never install anything for it; if the best way needs something new, describe it and let the user decide.
+- Pick the way yourself from what your environment allows, and say in one line what you propose. Usually: set each width in your browser in turn, take a screenshot, and show the screenshots side by side. Frames often fail (sites forbid being shown in a frame), so try them only if you know the site allows it.
+- Never install anything for it; if the best way needs something new, describe it and let the user decide.
 - Look for: overflow and sideways scroll, wrapped or cut text, overlapping elements, hidden or misplaced buttons, image cropping.
 
 ## Task context
