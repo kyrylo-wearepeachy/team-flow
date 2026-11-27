@@ -17,7 +17,7 @@ acceptance_criteria:
   AC2: "Add to cart is 56px tall on mobile"
 removed: []
 depends_on: []
-project_card: "https://app.clickup.com/t/0000"
+project_links: "https://app.clickup.com/t/0000"
 kit: "https://github.com/kyrylo-wearepeachy/team-flow"
 ---
 

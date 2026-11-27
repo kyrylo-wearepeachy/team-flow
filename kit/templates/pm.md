@@ -16,7 +16,7 @@ acceptance_criteria:
   AC1: "{one checkable result}"
 removed: []
 depends_on: []
-project_card: "{project_card}"
+project_links: "{project_links}"
 kit: "{kit_repo}"
 ---
 

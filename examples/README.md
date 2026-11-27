@@ -4,7 +4,7 @@ One filled task, for agents and people to see what finished files look like. The
 
 ```text
 examples/
-├── project.md            the project card + one person's History
+├── project.md            the project links + one person's History
 └── CS-001/
     ├── CS-001-pm.md      the story
     ├── CS-001-dev.md     the developer's file (round 2, after QA returned it)

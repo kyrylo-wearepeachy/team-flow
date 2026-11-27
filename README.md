@@ -54,7 +54,7 @@ With team-flow connected, each step is a ready command in your agent (in Claude 
 
 - **The PM file is the task's story.** Everyone copies its header and works from it. Its "Suggested approach" is only a hint: the developer decides.
 - **Early version.** Tested only on a demo site so far. Tell us what breaks.
-- **Project links live in one place**, the project card, shared once in the task tracker. Stories link to it instead of copying links.
+- **Project links live in one place** (e.g. a pinned task in the tracker). Stories link to it instead of copying the links.
 - **Files move by hand** or through a connected task tracker (e.g. ClickUp) when you tell your agent to. Nothing syncs on its own.
 - **The agent reads by default** and writes only your own local files, after your yes. It never sends, posts or pushes on its own.
 - **To suggest a change**, ask your agent (`suggest_change`): it drafts a short proposal, and you open it as an issue here or send it to the kit owner.

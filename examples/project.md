@@ -1,5 +1,5 @@
 ---
-# The project card: the source of the project variables (variables.md). Share this block once with the team (project_card).
+# The project links: the source of the project variables (variables.md), kept for the team at project_links.
 project: "demo-shop"
 task_prefix: "CS"
 repository: "https://github.com/example/demo-shop"
@@ -7,7 +7,7 @@ site: "https://demo-shop.example"
 preview: "https://preview.demo-shop.example"
 admin: "—"
 task_storage: "https://app.clickup.com/0000/v/li/0000"
-project_card: "https://app.clickup.com/t/0000"
+project_links: "https://app.clickup.com/t/0000"
 ---
 
 # Project: demo-shop

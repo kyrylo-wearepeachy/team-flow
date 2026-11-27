@@ -40,9 +40,9 @@ Next role: `pm_status: ready_for_dev` → developer. `dev_status: ready_for_qa` 
 - **Ask for a yes first:** site code changes and anything outside this computer (attach, comment, status change, post). Do it only when the user tells you to do that exact thing; never on your own, never as a suggestion.
 - Setting up a project folder asks for a yes once (see START.md).
 
-## Project card
+## Project links
 
-The project's links live in one shared place, the project card (the YAML block of `{report}`). Share it once with the team where `{project_card}` says; when a link changes, update the card, not the tasks.
+The project's links (the YAML block of `{report}`) are kept for the whole team in one place, `{project_links}`. When a link changes, update it there, not in the tasks.
 
 ## History
 

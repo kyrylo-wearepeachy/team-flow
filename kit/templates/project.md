@@ -1,5 +1,5 @@
 ---
-# The project card: the source of the project variables (variables.md). Share this block once with the team ({project_card}).
+# The project links: the source of the project variables (variables.md), kept for the team at {project_links}.
 project: "{project}"
 task_prefix: "{task_prefix}"
 repository: "{repository}"
@@ -7,7 +7,7 @@ site: "{site}"
 preview: "{preview}"
 admin: "{admin}"
 task_storage: "{task_storage}"
-project_card: "{project_card}"
+project_links: "{project_links}"
 ---
 
 # Project: {project}
