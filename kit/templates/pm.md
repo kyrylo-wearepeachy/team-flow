@@ -1,5 +1,6 @@
 ---
 # The task's passport. Everyone else works from it. Only its author changes it.
+# Fill it short: one line per value, D items up to 10 words, details go below the block.
 task: <PREFIX-001>
 role: pm
 by: <nick>

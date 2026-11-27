@@ -1,4 +1,5 @@
 ---
+# Fill it short: one line per value, refs as file:line or a commit, evidence as a screenshot name or a few words. Details go below the block.
 task: <PREFIX-001>
 role: dev                    # or design, content, … (any role that does the work)
 by: <nick>

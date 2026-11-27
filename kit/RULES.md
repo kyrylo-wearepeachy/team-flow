@@ -26,6 +26,7 @@ Each task is a folder, `tasks/<ID>/`. Every person writes only their own file in
 ## The contract
 
 - **Fixed:** the YAML block of your template — every key, values only from the comments next to them. No value → `—`.
+- **Short:** one line per value. A D item: a checkable result in up to 10 words. A ref: `file:line` or a commit hash. Evidence: a screenshot name or a few words of what you saw. Explanations go below the block, never into it.
 - **Free:** everything below it. Write in your own words and style, in English.
 - **Claim vs confirmation:** a developer's `done` is a claim; only a QA `pass` confirms it. Never raise one into the other.
 - **Versions:** `pm_version` in every file is the PM version it was made against. If the PM file is newer, say so: the work is against an old version. A new developer round closes the open QA bugs and every change since its PM version; QA checks against the latest PM version, and every item again if it changed.
@@ -38,7 +39,7 @@ At the start of a session, and before you work on a task, read the recent change
 
 ## Passing files on
 
-1. **Default — the task tracker (e.g. ClickUp).** Read task files from the task there. When the user says to hand off ("hand off", "здай", or similar), check your YAML block, then attach your file to the task. Attaching needs the tracker connected with write access; offer that once at setup.
+1. **Default — the task tracker (e.g. ClickUp).** Read task files from the task there. When the user asks in their own words to pass the file on or attach it, check your YAML block, then attach your file to the task. Attaching needs the tracker connected with write access; offer that once at setup.
 2. **Plan B — no tracker connected.** Check your YAML block, then tell the user which file to pass and to whom, and give a ready two-line message to send with it.
 
 Next role: PM file ready → developer. Developer `ready_for_qa` → QA. QA `failed` → developer. QA `passed` → PM. QA `blocked` → the user, with what access is missing.

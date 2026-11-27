@@ -45,7 +45,7 @@ If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, 
 
    | Connector | Why | PM | Dev and other specialists | QA |
    | --- | --- | --- | --- | --- |
-   | Task tracker (e.g. ClickUp) | read the task files of other roles; with write access, attach your file when you say "hand off" (the PM can also create tasks) | read + write | read + write | read + write |
+   | Task tracker (e.g. ClickUp) | read the task files of other roles; with write access, attach your file when you ask (the PM can also create tasks) | read + write | read + write | read + write |
    | Code host (e.g. GitHub) | read the code and its recent changes, to see what is going on | read | read (or local `git log`) | read |
    | Chat (e.g. Slack) | read client messages from one channel; pasting them in chat works too | read, optional | — | — |
 
