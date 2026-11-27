@@ -1,5 +1,6 @@
 ---
 project: <project name>
+task_prefix: <e.g. CS — task IDs are CS-001, CS-002, …>
 checked: <YYYY-MM-DD HH:MM>
 repository: <GitHub URL | —>
 store: <URL | —>

@@ -6,7 +6,7 @@ Updated: <YYYY-MM-DD HH:MM> · Round: <N> · By: <nick> · Main: <yes | no> · S
 
 ## Read
 
-<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev.md, CU-001-qa.md (bugs 1, 2)>
+<every file of the task you read, with versions, e.g. T-001-pm.md v3, T-001-dev.md, T-001-qa.md (bugs 1, 2)>
 
 ## Done
 

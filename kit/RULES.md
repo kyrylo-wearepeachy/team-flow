@@ -6,15 +6,15 @@ The names in these rules — `project.md` (the report), `tasks/`, the site code 
 
 ## The files
 
-Each task is a folder named after the task ID, e.g. `tasks/CU-001/` in your project folder. Every person writes only their own file in it:
+Each task is a folder named after the task ID, e.g. `tasks/T-001/` in your project folder. Every person writes only their own file in it:
 
 | File | Written by | From template |
 | --- | --- | --- |
-| `CU-001-pm.md` | whoever creates the task (usually the PM) | [templates/pm.md](templates/pm.md) |
-| `CU-001-dev.md` | the main developer | [templates/dev.md](templates/dev.md) |
-| `CU-001-qa.md` | the main QA | [templates/qa.md](templates/qa.md) |
-| `CU-001-<role>.md` | the main other specialist (design, content, …) | [templates/dev.md](templates/dev.md) |
-| `CU-001-<role>-<nick>.md` | every extra person on a role, e.g. `CU-001-dev-max.md` | the same template as the role |
+| `T-001-pm.md` | whoever creates the task (usually the PM) | [templates/pm.md](templates/pm.md) |
+| `T-001-dev.md` | the main developer | [templates/dev.md](templates/dev.md) |
+| `T-001-qa.md` | the main QA | [templates/qa.md](templates/qa.md) |
+| `T-001-<role>.md` | the main other specialist (design, content, …) | [templates/dev.md](templates/dev.md) |
+| `T-001-<role>-<nick>.md` | every extra person on a role, e.g. `T-001-dev-max.md` | the same template as the role |
 | `media/` | anyone | screenshots and files, each with a one-line description where it is referenced |
 
 - **Main and extra.** The first person on a role is the main one: their file has no nick, and says `Main: yes`. Anyone who joins the same role later adds their own file with their nick and `Main: no`. `<nick>` is your short name in the team, from `project.md` ("Me").
@@ -28,7 +28,7 @@ The team shares task files through the task storage named in `project.md` (`task
 ## Media
 
 - A file the user adds keeps its original name.
-- A file you add while creating a task gets a clear name that starts with the task ID: `CU-001-mobile-cart.png`.
+- A file you add while creating a task gets a clear name that starts with the task ID: `T-001-mobile-cart.png`.
 - Reference media by file name only, and give each one a one-line description where you reference it: what it shows, and if it is cropped or unclear.
 - Files the user drops in a flat list go to `tasks/<ID>/media/` of the task whose files reference them.
 
@@ -68,7 +68,7 @@ Only these, each once, short:
 5. The go-ahead before you write.
 6. What blocks the current task, if only the user or the client can answer it.
 
-Never ask for tokens, passwords, API keys, admin or write access, or for anything you can find yourself by reading the project folder.
+Never ask for tokens, passwords, API keys, admin or write access, or for anything you can find yourself by reading the project folder. One exception: the PM's agent may offer once to connect the task tracker with write access, so it can create tasks and attach files when the PM tells it to.
 
 ## One structure for every task file
 
@@ -167,5 +167,6 @@ Use only these values where the templates ask for them.
 - **Dates:** always `YYYY-MM-DD HH:MM`, in files and in chat. Dates and times in a task come from the client's messages (when the client said it). `checked`, "Updated", "Date" and the Log use the time you write the file.
 - **Empty:** no value → `—`. Never leave a key, a cell or a section empty, never drop it.
 - **Update or new task:** the client adds to, changes or drops something a task already asks → update that task. Anything else is a new task, even about the same element or page. Not sure → new task, and say which task it may belong to.
+- **Suggested approach:** the PM's hint about the cause and the fix. Never a rule: the developer decides.
 - **Found by the agent:** an item the client did not ask for (same cause, other places) ends with "(found by agent)" so the PM can keep or drop it. A problem with another cause goes to the PM in your reply, not into a task.
 - **Splitting:** one problem = one task. Two symptoms with one cause in the code = one task. One symptom on several pages with different causes = separate tasks. Not sure → separate tasks, and say why in Questions.

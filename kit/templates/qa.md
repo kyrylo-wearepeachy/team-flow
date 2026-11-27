@@ -6,7 +6,15 @@ Updated: <YYYY-MM-DD HH:MM> · Round: <N> · By: <nick> · Main: <yes | no> · S
 
 ## Read
 
-<every file of the task you read, with versions, e.g. CU-001-pm.md v3, CU-001-dev.md, CU-001-dev-max.md>
+<every file of the task you read, with versions, e.g. T-001-pm.md v3, T-001-dev.md, T-001-dev-max.md>
+
+## Change scope
+
+What the Dev change touches, read from the code (the branch, commit or diff named in the Dev files). Check what changed and what it may affect, not the whole site.
+
+- **Changed:** <files and sections, e.g. `css/style.css` · .btn-primary on mobile>
+- **May be affected:** <pages and components that use the same code>
+- **Not changed, not checked:** <the rest, in one line>
 
 ## Agent reading
 

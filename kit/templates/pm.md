@@ -16,6 +16,10 @@ Updated: <YYYY-MM-DD HH:MM> · By: <nick> · Status: <ready_for_dev | needs_clie
 | --- | --- | --- | --- |
 | D1 | <what the client means, in your words> | <sources looked at: `file:line`, page, screenshot> | <found — what is there · not found — what you looked for · — why not checked> |
 
+## Suggested approach (not binding)
+
+<What the agent saw in the code: where the cause likely is and what could change, `file:line`. A hint to save the developer time; the developer decides and may do it differently. — if you could not read the code.>
+
 ## Materials
 
 - `<file name>` — <one line: what it shows and why it matters; say if cropped or unclear>

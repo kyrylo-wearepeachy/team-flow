@@ -23,7 +23,7 @@ Open your project folder in your AI agent and paste, in any language:
 ```text
 AGENTS.md      your role, your nick, where the rules are
 project.md     your mini report: tasks and a log
-tasks/CU-001/  the task's files: yours and the ones others pass you
+tasks/T-001/  the task's files: yours and the ones others pass you
 ```
 
 Claude and Gemini also get a one-line `CLAUDE.md` or `GEMINI.md` that points to `AGENTS.md`. The rules themselves are not copied: they are read fresh every session.
@@ -45,6 +45,7 @@ With team-flow connected, each step is a ready command in your agent (in Claude 
 
 ## Good to know
 
+- **The PM file is the task's passport.** Everyone copies its header and works from it. Its "Suggested approach" is only a hint: the developer decides.
 - **Early version.** Tested only on a demo site so far. Tell us what breaks.
 - **Files move by hand** or through a connected task tracker (e.g. ClickUp) when you tell your agent to. Nothing syncs on its own.
 - **The agent reads by default** and writes only your own local files, after your yes. It never sends, posts or pushes on its own.

@@ -27,7 +27,7 @@ If the user named their role, add one short paragraph: what they will do, and fr
 
 ## Already set up?
 
-If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set up: take the paths from its "Paths", get the rules from its "Rules" line (the team-flow MCP `rules` tool with your role, or `RULES.md` and your role file read from the link), then read the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
+If the current folder has an `AGENTS.md` with a team-flow block (`# team-flow`, or a `## team-flow` section), it is set up: take the paths from its "Paths", get the rules from its "Rules" line (the team-flow MCP `rules` tool with your role, or `RULES.md` and your role file read from the link), then read the report. Do the quiet check in "Start of a session" (RULES.md), then do what the user asks.
 
 ## Set up (once per project folder)
 
@@ -39,19 +39,19 @@ If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set u
    - **A general work folder** (it holds several unrelated project folders) → propose a new subfolder named after the project, e.g. `./<project>/`, as part of step 7. The user then opens the next sessions in it.
    - **A code repository** (it has `.git` and the site code) → this is the only case you ask, once: set up in the parent folder instead? Say why: here, the team-flow files would show up in the site's git.
    - **Map what already exists.** If the project already has its own structure — a folder of tasks or tickets, the site code in `src/`, `theme/` or elsewhere — point "Paths" at those folders (step 7) instead of creating new ones. Map folders only.
-   - **Never write into the project's existing files.** The report is always a new file of its own: `project.md`, or `team-flow.md` if a `project.md` that is not a team-flow report already exists. Existing notes, readmes and docs stay untouched; you may read them for project facts. The only existing files you may change are `AGENTS.md`, `CLAUDE.md` and `GEMINI.md`, by adding your block at the top.
-5. **Project facts.** If the user gave a task file of this project (any role), take the project keys from the YAML block of its header: that is the team's shared data. For what is still missing, ask once, in one message: project name, site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
+   - **Never write into the project's existing files.** The report is always a new file of its own: `project.md`, or `team-flow.md` if a `project.md` that is not a team-flow report already exists. Existing notes, readmes and docs stay untouched; you may read them for project facts. The only existing files you may change are `AGENTS.md`, `CLAUDE.md` and `GEMINI.md`, by adding a separate `## team-flow` section at the end.
+5. **Project facts.** If the user gave a task file of this project (any role), take the project keys from the YAML block of its header: that is the team's shared data. For what is still missing, ask once, in one message: project name, the task prefix (propose one from the project name, e.g. `CS` for coffee-shop, or the prefix the task tracker already uses), site URL, preview URL, admin URL (as a link only), code repository URL, where tasks live (e.g. a ClickUp list). Unknown → `—`. Never invent.
 6. **Connectors.** Ask once, in one message, which of these are connected or the user will connect, with one line each on why. Show only the rows for this role:
 
    | Connector | Why | PM | Dev and other specialists | QA |
    | --- | --- | --- | --- | --- |
-   | Task tracker (e.g. ClickUp) | read tasks and the task files of other roles | read | read | read |
-   | Code host (e.g. GitHub) | read the site code when it is not in this folder | read | — (code is local) | read |
+   | Task tracker (e.g. ClickUp) | read tasks and the task files of other roles; for the PM, also create tasks and attach files when told to | read, or write if you want me to create tasks | read | read |
+   | Code host (e.g. GitHub) | read the site code: the PM to suggest a fix, the QA to see what changed | read | — (code is local) | read, needed for "Change scope" |
    | Chat (e.g. Slack) | read client messages from one channel; pasting them in chat works too | read, optional | — | — |
 
    If tools are already set up in your environment (a browser, a design tool, helper CLIs, connectors), say in one line which of them you will use for team-flow work and for what (see "Your own setup" in RULES.md).
 
-   Say that read access is enough, that you connect nothing yourself (the user does it in their app's settings), and that everything also works without connectors: the user then passes files by hand. Never ask for tokens, passwords, admin access or write access.
+   Say that read access is enough (the PM's task tracker is the only place where write helps), that you connect nothing yourself (the user does it in their app's settings), and that everything also works without connectors: the user then passes files by hand. Never ask for tokens, passwords, admin access or write access.
    **team-flow MCP.** If it is not connected yet, add one question to the same message: "Connect team-flow directly, so the rules are always current? Say yes and I will do it." Explain in one line that without it you read the rules from the link each session, which needs web access. On yes:
    - in Claude Code, run `claude mcp add --scope user --transport http team-flow https://team-flow-mcp.kirill-264.workers.dev/mcp`;
    - in Codex, run `codex mcp add team-flow --url https://team-flow-mcp.kirill-264.workers.dev/mcp`;
@@ -72,7 +72,7 @@ If the current folder has an `AGENTS.md` with a `# team-flow` block, it is set u
      Before any work: get the rules for your role from "Rules", then read the report.
      ```
    - Only if your own agent does not read `AGENTS.md` by itself: its own file with one import line, `@AGENTS.md` — `CLAUDE.md` for Claude, `GEMINI.md` for Gemini. Not both, not a copy.
-   - A file that already exists: add your block (or the import line) at the top and change nothing else.
+   - A file that already exists: add your block as a separate section at the end, headed `## team-flow` (for an import file, the import line at the end), and change nothing else in it.
 
    Nothing else: no copy of the kit; the tasks folder appears with the first task. Leave as few traces as possible.
 8. **Create** them after the go-ahead. Tell the user in 2–3 lines: where it was set up, role, which connectors are on, what is still `—` in `project.md`. If you set up in another folder, tell the user to open the next sessions there.
