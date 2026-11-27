@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- team-flow responsive view: one page at several widths, side by side, same height.
+     Open as responsive.html?url=<page URL>&w=390,768,1024,1440 (optional &h=<frame height in px>) -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Responsive view</title>
+<style>
+  body { margin: 0; font: 13px/1.4 system-ui, sans-serif; background: #f3f3f3; color: #222; }
+  header { display: flex; gap: 8px; align-items: center; padding: 8px 12px; background: #fff; border-bottom: 1px solid #ddd; }
+  header input { flex: 1; padding: 4px 6px; font: inherit; }
+  #frames { display: flex; gap: 12px; align-items: flex-start; padding: 12px; }
+  .cell { flex: none; }
+  .label { margin-bottom: 4px; color: #555; }
+  .box { overflow: hidden; background: #fff; box-shadow: 0 0 0 1px #ccc; }
+  iframe { border: 0; transform-origin: 0 0; display: block; }
+</style>
+</head>
+<body>
+<header>
+  <input id="url" placeholder="Page URL">
+  <input id="widths" style="flex:0 0 160px" title="Widths">
+  <button id="go">Show</button>
+</header>
+<div id="frames"></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const $ = (id) => document.getElementById(id);
+  $("url").value = q.get("url") || "";
+  $("widths").value = q.get("w") || "390,768,1024,1440";
+
+  function render() {
+    const url = $("url").value.trim();
+    const widths = $("widths").value.split(",").map(Number).filter(Boolean);
+    const gap = 12, pad = 24;
+    const scale = Math.min(1, (innerWidth - pad - gap * (widths.length - 1)) / widths.reduce((a, b) => a + b, 0));
+    // Same height for all frames: from ?h=, or as tall as the window allows.
+    const height = Number(q.get("h")) || Math.max(600, Math.round((innerHeight - 100) / scale));
+    $("frames").innerHTML = "";
+    for (const w of widths) {
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      cell.innerHTML = `<div class="label">${w}px${scale < 1 ? ` · ${Math.round(scale * 100)}%` : ""}</div>`;
+      const box = document.createElement("div");
+      box.className = "box";
+      box.style.width = w * scale + "px";
+      box.style.height = height * scale + "px";
+      const f = document.createElement("iframe");
+      f.width = w;
+      f.height = height;
+      f.style.transform = `scale(${scale})`;
+      if (url) f.src = url;
+      box.appendChild(f);
+      cell.appendChild(box);
+      $("frames").appendChild(cell);
+    }
+  }
+  $("go").onclick = render;
+  addEventListener("resize", render);
+  render();
+</script>
+</body>
+</html>

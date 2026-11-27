@@ -40,6 +40,10 @@ With team-flow connected, each step is a ready command in your agent (in Claude 
 | Dev | `dev_new_round` | QA returned it, or the PM updated it |
 | QA | `qa_check_task` | check a task, with evidence |
 | Anyone | `project_status` | what is going on in the project |
+| Anyone | `task_draft` | a quick task file from a sentence, a link or a screenshot |
+| Anyone | `find_cause` | the likely cause of a problem, from the page, the design and the code |
+| QA | `qa_visual_check` | compare the site with the design (e.g. Figma) |
+| QA, Dev | `qa_responsive_view` | one page at 390 · 768 · 1024 · 1440 side by side |
 | Anyone | `handoff` | you are done: what to pass on, and to whom |
 | Anyone | `suggest_change` | propose a change to team-flow |
 
