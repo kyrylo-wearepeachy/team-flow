@@ -13,6 +13,7 @@ items:
   AC1: { state: "{dev_state}", ref: "{ref}" }
 commit: "{commit}"
 check_here: "{preview URL or page to open}"
+run: "{run}"
 ---
 
 # {task_id} · {role} · {nick}

@@ -24,7 +24,6 @@ project:                     # copied from {report}
   preview: "{preview}"
   admin: "{admin}"
   task_storage: "{task_storage}"
-  run: "{run}"
   kit: "{kit_repo}"
 ---
 

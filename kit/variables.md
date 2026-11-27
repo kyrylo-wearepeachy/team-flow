@@ -33,9 +33,8 @@ Values are here, nowhere else.
 | `{preview}` | preview URL, or `—` |
 | `{admin}` | admin URL (link only), or `—` |
 | `{task_storage}` | task tracker list URL (e.g. ClickUp), or `—` |
-| `{run}` | how to open or run the site for work: a preview URL, a local command, short steps, or `—` (no secrets) |
 
-The story carries a copy of these under `project:`, filled from `{report}`, plus `kit: {kit_repo}` — so a newcomer who gets only a task file has the links, how to start, and where the rules are.
+The story carries a copy of these under `project:`, filled from `{report}`, plus `kit: {kit_repo}` — so a newcomer who gets only a task file has every project link and knows where the rules are.
 
 ## Task — source: the YAML block of the story (the PM file) (template [templates/pm.md](templates/pm.md))
 
@@ -63,6 +62,7 @@ Every other file of the task copies `{task_id}` and `{pm_version}` from the PM f
 | `{qa_result}` | `passed` · `failed` · `blocked` |
 | `{scope}` | `all`, or the acceptance criteria you take, e.g. `[AC1, AC3]` |
 | `{now}` | the time you write, `YYYY-MM-DD HH:MM` |
+| `{run}` | developers only, in the dev file: how to run the site for development — a local command or short steps, no secrets. Take it from an earlier dev file of the project if there is one. |
 | `{dev_state}` | a developer's acceptance criterion: `done` (needs `{ref}`) · `not_done` · `blocked` (both need `{why}`). |
 | `{qa_state}` | a QA acceptance criterion: `pass` (needs `{where}` and `{evidence}`) · `fail` (needs a bug number) · `no_access` (needs `{why}`) |
 | `{ref}` | `file:line` or a commit hash |
