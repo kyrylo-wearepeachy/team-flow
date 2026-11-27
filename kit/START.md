@@ -1,6 +1,6 @@
 # team-flow — start here
 
-This is for an AI agent. team-flow is how a team passes work: PM → Dev → QA → PM. Every person works with their own agent in their own project folder, on their own computer. Work moves between people as one file per person per task — the PM file is the task's passport — each starting with a small YAML block that a check keeps right, so every role sees the full picture: what the client asked, what changed in the code, what was checked.
+This is for an AI agent. team-flow is how a team passes work: PM → Dev → QA → PM. Every person works with their own agent in their own project folder, on their own computer. Work moves between people as one file per person per task — the PM file is the task's story — each starting with a small YAML block that a check keeps right, so every role sees the full picture: what the client asked, what changed in the code, what was checked.
 
 The user gave you this kit, or a link to it, to set up their project folder, or to work in a folder that is already set up.
 

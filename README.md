@@ -49,7 +49,7 @@ With team-flow connected, each step is a ready command in your agent (in Claude 
 
 ## Good to know
 
-- **The PM file is the task's passport.** Everyone copies its header and works from it. Its "Suggested approach" is only a hint: the developer decides.
+- **The PM file is the task's story.** Everyone copies its header and works from it. Its "Suggested approach" is only a hint: the developer decides.
 - **Early version.** Tested only on a demo site so far. Tell us what breaks.
 - **Files move by hand** or through a connected task tracker (e.g. ClickUp) when you tell your agent to. Nothing syncs on its own.
 - **The agent reads by default** and writes only your own local files, after your yes. It never sends, posts or pushes on its own.

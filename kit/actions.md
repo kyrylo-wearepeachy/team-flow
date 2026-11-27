@@ -7,9 +7,9 @@ Common actions any role can ask for. Each one: work out by yourself which of you
 A quick task file from anything: one sentence, a link, a screenshot.
 
 1. Read what the user gave. If it is a link to a task tracker task and the tracker is connected, read the task, its comments and attachments.
-2. Fill the PM template as far as the facts go: the YAML block with one or more `done_when` items, and in the text the materials with one line each. Unknown → `—`; open points go to the questions for the client.
+2. Fill the PM template as far as the facts go: the YAML block with one or more `acceptance_criteria` items, and in the text the materials with one line each. Unknown → `—`; open points go to the questions for the client.
 3. Take the next ID with the project's `task_prefix`.
-4. Write, show a short summary, check the YAML block. The PM file is the task's passport; a non-PM author is named in `by`.
+4. Write, show a short summary, check the YAML block. The PM file is the task's story; a non-PM author is named in `by`.
 
 ## Find the cause
 
@@ -44,7 +44,7 @@ One page at several widths side by side, in one browser window, all at the same 
 
 Before you work on a task. Read only.
 
-1. **Task files:** every file in `{tasks}/{task_id}/` — the PM passport and every other person's file. Read the YAML first, then the text.
+1. **Task files:** every file in `{tasks}/{task_id}/` — the story (the PM file) and every other person's file. Read the YAML first, then the text.
 2. **Task tracker:** if connected, the latest files and comments of the task there. If newer than the local ones, say so.
 3. **Code changes:** commits and pull requests that name `{task_id}`, and what they changed.
 4. **History:** entries for `{task_id}`, or "continues `{task_id}`", in `{report}`.
@@ -56,6 +56,6 @@ Then tell the user in 3–5 lines: what the task asks now (`{pm_version}`), who 
 What is going on in the project. Read only.
 
 1. For each task folder in `{tasks}` (and the tracker, if connected): read the YAML of every file.
-2. One table: task · title · `{pm_version}` · `{pm_status}` · each developer (nick, `{dev_status}`, `{round}`) · each QA (nick, `{qa_result}`, `{round}`) · what waits for whom.
-3. Flag conflicts: a file made against an old `{pm_version}`, a D item done in one file and missing in another, a pass without evidence.
+2. One table: task · title · `{pm_version}` · `{pm_status}` · each developer (nick, `{dev_status}`, `{round}`) · each QA (nick, `{qa_result}`, `{round}`) · `{depends_on}` · what waits for whom.
+3. Flag conflicts: a file made against an old `{pm_version}`, an acceptance criterion done in one file and missing in another, a pass without evidence.
 4. Add the recent commits and pull requests that name a task ID, one line each.

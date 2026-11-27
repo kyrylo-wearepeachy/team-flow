@@ -10,7 +10,7 @@ updated: "{now}"
 pm_version: "{pm_version}"
 scope: "{scope}"
 items:
-  D1: { state: "{dev_state}", ref: "{ref}" }
+  AC1: { state: "{dev_state}", ref: "{ref}" }
 commit: "{commit}"
 check_here: "{preview URL or page to open}"
 ---

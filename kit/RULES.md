@@ -8,10 +8,10 @@ Everything in this kit is built on the variables in [variables.md](variables.md)
 
 ## Task files
 
-One folder per task, `{tasks}/{task_id}/`; file names come from `variables.md` → Built from variables. Whoever creates the task writes the PM file (the passport, [templates/pm.md](templates/pm.md)); everyone else writes their own file ([templates/dev.md](templates/dev.md) for any role that does the work, [templates/qa.md](templates/qa.md) for QA).
+One folder per task, `{tasks}/{task_id}/`; file names come from `variables.md` → Built from variables. Whoever creates the task writes the PM file (the story, [templates/pm.md](templates/pm.md)); everyone else writes their own file ([templates/dev.md](templates/dev.md) for any role that does the work, [templates/qa.md](templates/qa.md) for QA).
 
 - One file per person for the whole task. A new round updates the same file and raises `{round}`.
-- Several people on one role: each takes their D items in `{scope}`. Taking over: read the earlier file and take the items from it.
+- Several people on one role: each takes their acceptance criteria in `{scope}`. Taking over: read the earlier file and take the items from it.
 - Never change another person's file.
 
 ## The contract
@@ -21,7 +21,7 @@ One folder per task, `{tasks}/{task_id}/`; file names come from `variables.md` �
 - **Claim vs confirmation:** a developer's `done` is a claim; only a QA `pass` confirms it. Never raise one into the other.
 - **Versions:** if the PM file is newer than the `{pm_version}` a file was made against, say so. A new developer round closes the open QA bugs and every change since its `{pm_version}`; QA checks against the latest `{pm_version}`, and every item again if it changed.
 - **Conflicts:** if files disagree, show it to the user; never pick one yourself.
-- **Check before you pass a file on:** every key filled, every value allowed by `variables.md`, every D item in `{scope}` has an entry, `{pm_version}` is the latest. Fix what is off.
+- **Check before you pass a file on:** every key filled, every value allowed by `variables.md`, every acceptance criterion in `{scope}` has an entry, `{pm_version}` is the latest. Fix what is off.
 
 ## See what is going on
 
@@ -43,6 +43,10 @@ Next role: `pm_status: ready_for_dev` → developer. `dev_status: ready_for_qa` 
 ## History
 
 Everyone keeps a record in `{report}` → History, so that a year later anyone can find what was done, when and from what: one entry per task file you write, in the format of `variables.md` → History entry, newest last, never edited. No secrets, no client personal data beyond what the task needs.
+
+## Sessions
+
+One step, one fresh session: the PM writes the story in one session, the developer works in another, QA checks in another. Everything a step needs is in the task files, so nothing depends on an old chat.
 
 ## Start of a session
 

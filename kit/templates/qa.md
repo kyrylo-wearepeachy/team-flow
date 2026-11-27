@@ -13,9 +13,9 @@ change_scope:
   changed: ["{file · section}"]
   may_affect: ["{page or component}"]
 items:
-  D1: { state: "{qa_state}", where: "{where}", evidence: "{evidence}" }
+  AC1: { state: "{qa_state}", where: "{where}", evidence: "{evidence}" }
 bugs:
-  - { id: 1, item: D1, what: "{one line}", evidence: "{evidence}" }
+  - { id: 1, item: AC1, what: "{one line}", evidence: "{evidence}" }
 ---
 
 # {task_id} · QA · {nick}

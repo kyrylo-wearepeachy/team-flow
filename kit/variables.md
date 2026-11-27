@@ -36,7 +36,7 @@ Values are here, nowhere else.
 
 The PM file carries a copy of these under `project:`, filled from `{report}`, so any task file is enough for a new teammate to build their `{report}`.
 
-## Task — source: the YAML block of the PM file (template [templates/pm.md](templates/pm.md))
+## Task — source: the YAML block of the story (the PM file) (template [templates/pm.md](templates/pm.md))
 
 | Variable | Meaning |
 | --- | --- |
@@ -47,7 +47,8 @@ The PM file carries a copy of these under `project:`, filled from `{report}`, so
 | `{devices}` | list of `all` · `desktop` · `tablet` · `mobile` |
 | `{title}` | `[Page] what to do`, up to 8 words |
 | `{page}` · `{url}` · `{design}` | page name, page URL, design link (or `—`) |
-| `D1`, `D2`, … | the `done_when` items; numbers never change or get reused |
+| `AC1`, `AC2`, … | acceptance criteria: each one checkable result; numbers never change or get reused |
+| `{depends_on}` | task IDs this one waits for, e.g. `[CS-003]`, or `[]` |
 
 Every other file of the task copies `{task_id}` and `{pm_version}` from the PM file.
 
@@ -59,10 +60,10 @@ Every other file of the task copies `{task_id}` and `{pm_version}` from the PM f
 | `{round}` | 1, +1 on every new round, same file |
 | `{dev_status}` | `ready_for_qa` · `blocked` |
 | `{qa_result}` | `passed` · `failed` · `blocked` |
-| `{scope}` | `all`, or the D items you take, e.g. `[D1, D3]` |
+| `{scope}` | `all`, or the acceptance criteria you take, e.g. `[AC1, AC3]` |
 | `{now}` | the time you write, `YYYY-MM-DD HH:MM` |
-| `{dev_state}` | a developer's D item: `done` (needs `{ref}`) · `not_done` · `blocked` (both need `{why}`). |
-| `{qa_state}` | a QA D item: `pass` (needs `{where}` and `{evidence}`) · `fail` (needs a bug number) · `no_access` (needs `{why}`) |
+| `{dev_state}` | a developer's acceptance criterion: `done` (needs `{ref}`) · `not_done` · `blocked` (both need `{why}`). |
+| `{qa_state}` | a QA acceptance criterion: `pass` (needs `{where}` and `{evidence}`) · `fail` (needs a bug number) · `no_access` (needs `{why}`) |
 | `{ref}` | `file:line` or a commit hash |
 | `{why}` | what is missing, a few words |
 | `{where}` | page and width or device, e.g. `product · 390` |
@@ -71,7 +72,7 @@ Every other file of the task copies `{task_id}` and `{pm_version}` from the PM f
 
 Rules for `{qa_result}`: `passed` only if every item in scope is `pass`; any `fail` → `failed`; any `no_access` → `blocked`.
 
-Values: one line each. A D item is a checkable result in up to 10 words. Explanations go below the YAML block, never into it.
+Values: one line each. A acceptance criterion is a checkable result in up to 10 words. Explanations go below the YAML block, never into it.
 
 ## Built from variables
 
@@ -82,6 +83,7 @@ Values: one line each. A D item is a checkable result in up to 10 words. Explana
 | your file (main) | `{tasks}/{task_id}/{task_id}-{role}.md` |
 | your file (joined later) | `{tasks}/{task_id}/{task_id}-{role}-{nick}.md` |
 | media | `{tasks}/{task_id}/media/{task_id}-short-name.png` (a file the user adds keeps its name) |
+| branch name (suggested) | `{task_id}-short-name` |
 | commit message (suggested) | `{task_id}: what changed` — the developer commits; agents never commit or push |
 | History entry | see below |
 
@@ -96,3 +98,7 @@ Done:    what you did, one or two lines (PM: what the client asked · developer:
 Content: what it came from: client message (date, a few words), files, design links
 Links:   commit, tracker task, related tasks ("continues {task_id}")
 ```
+
+### Optional, later
+
+Some trackers link code to a task by its ID: with ClickUp's GitHub integration, a ClickUp task ID in a branch name, commit message or pull request title links it to the task. If the team sets `{task_prefix}` to the tracker's custom task ID prefix, the suggested branch and commit names above link by themselves. team-flow does not set this up.
