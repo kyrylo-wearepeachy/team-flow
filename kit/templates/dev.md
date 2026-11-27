@@ -12,12 +12,12 @@ scope: all                   # all, or the items you take: [D1, D3]
 items:                       # one per D item in your scope
   D1: { state: done, ref: "<file:line or commit>" }     # done needs ref
   D2: { state: blocked, why: "<what is missing>" }      # not_done / blocked need why
-commit: "<branch · hash, or —>"
+commit: "<branch · hash once the developer committed, or —>"
 check_here: "<preview URL or page to open>"
 ---
 
 # CS-001 · Dev · max
 
-Write the rest in your own words, in English: what you changed and why, what QA should look at closely, and one line per round (what changed, which QA bugs it fixes).
+Write the rest in your own words, in English: what you changed and why, the suggested commit message, what QA should look at closely, and one line per round (what changed, which QA bugs it fixes).
 
 "done" is your claim. Only QA confirms it.

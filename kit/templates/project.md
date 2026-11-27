@@ -25,9 +25,12 @@ Only for this computer: where things are and how your agent reaches them.
 | design | <connector · screenshots from the user · —> |
 | task storage | <connector read · read and write · files by hand> |
 
-## Log
+## History
 
-Your own history: one row per file you wrote. The task overview is built on request (`project_status`), not kept by hand.
+Your own record, one entry per task file you write, newest last. Never edit old entries. See "History" in the rules.
 
-| Date | Task | Role | Round / PM v | Link | What happened |
-| --- | --- | --- | --- | --- | --- |
+### <YYYY-MM-DD HH:MM> · <task> · <role> · <round / PM version>
+Task:    <title>
+Done:    <what you did, in one or two lines>
+Content: <what it came from: client message (date, a few words), files, design links>
+Links:   <commit, tracker task, related tasks ("continues CS-000")>
