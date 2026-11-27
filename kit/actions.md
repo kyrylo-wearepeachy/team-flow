@@ -36,5 +36,6 @@ One page at several widths side by side, in one browser window, all at the same 
 - Default widths: 390 · 768 · 1024 · 1440. Wider frames are scaled down so all fit in one window.
 - The ready page is the `responsive` template ([templates/responsive.html](templates/responsive.html)). Open it with the page URL: `responsive.html?url=<page URL>` (optional `&w=390,768,1024,1440`; the frames fill the window height, or set `&h=<px>`).
 - Write the page only to the system temp folder, never into the project; it is the one file you may write outside the project folder.
-- Many sites block being shown in a frame (empty frames, a console error about X-Frame-Options or frame-ancestors). Then do the same with your browser: set each width in turn, take a screenshot, and show the screenshots side by side.
+- **First check what you can open.** Many sites forbid being shown in a frame (an `X-Frame-Options` header, or `frame-ancestors` in `Content-Security-Policy`), and then the frames stay empty. Check the page's headers, or try once.
+- **If frames do not work, choose the way yourself** from what your environment allows, and tell the user in one line what you propose and why. For example: set each width in your browser in turn and show the screenshots side by side; use a tool you already have for this; or something else that fits. Never install anything for it; if the best way needs something new, describe it and let the user decide.
 - Look for: overflow and sideways scroll, wrapped or cut text, overlapping elements, hidden or misplaced buttons, image cropping.
